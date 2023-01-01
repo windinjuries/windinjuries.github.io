@@ -41,7 +41,7 @@
     <script id="hexo-configurations">
     let REDEFINE = window.REDEFINE || {};
     REDEFINE.hexo_config = {"hostname":"windinjuries.github.io","root":"/","language":"en"};
-    REDEFINE.theme_config = {"toc":{"enable":true,"number":false,"expand_all":true,"init_open":true},"style":{"primary_color":"#005080","avatar":"/images/avatar.svg","favicon":"/images/logo.svg","article_img_align":"center","right_side_width":"210px","content_max_width":"1000px","nav_color":{"left":"#f78736","right":"#367df7","transparency":35},"hover":{"shadow":true,"scale":false},"first_screen":{"enable":true,"background_image":{"light":"https://evan.beee.top/img/wallhaven-wqery6-light.webp","dark":"images/1.jpg"},"title_color":{"light":"#fff","dark":"#d1d1b6"},"description":"Theme Redefine"},"scroll":{"progress_bar":{"enable":true},"percent":{"enable":true}}},"local_search":{"enable":false,"preload":true},"code_block":{"copy":true,"style":"mac"},"pjax":{"enable":true},"lazyload":{"enable":true},"version":"0.4.5","friend_links":{"columns":2}};
+    REDEFINE.theme_config = {"toc":{"enable":true,"number":false,"expand_all":true,"init_open":true},"style":{"primary_color":"#005080","avatar":"/images/avatar.svg","favicon":"/images/logo.svg","article_img_align":"center","right_side_width":"210px","content_max_width":"1000px","nav_color":{"left":"#f78736","right":"#367df7","transparency":35},"hover":{"shadow":true,"scale":false},"first_screen":{"enable":true,"background_image":{"light":"https://s2.loli.net/2023/01/01/Gy6HJivoBEmutrx.jpg","dark":"https://s2.loli.net/2023/01/01/Gy6HJivoBEmutrx.jpg"},"title_color":{"light":"#fff","dark":"#d1d1b6"},"description":"Theme Redefine"},"scroll":{"progress_bar":{"enable":true},"percent":{"enable":true}}},"local_search":{"enable":false,"preload":true},"code_block":{"copy":true,"style":"mac"},"pjax":{"enable":true},"lazyload":{"enable":true},"version":"0.4.5","friend_links":{"columns":2}};
     REDEFINE.language_ago = {"second":"%s seconds ago","minute":"%s minutes ago","hour":"%s hours ago","day":"%s days ago","week":"%s weeks ago","month":"%s months ago","year":"%s years ago"};
   </script>
 <meta name="generator" content="Hexo 6.3.0"><link rel="alternate" href="/atom.xml" title="Jin's Blog" type="application/atom+xml">
@@ -243,20 +243,24 @@
 <li>git</li>
 <li>python3</li>
 </ul>
-<h2 id="hexo安装"><a href="#hexo安装" class="headerlink" title="hexo安装"></a>hexo安装</h2><div class="highlight-container" data-rel="Shell"><figure class="iseeu highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">npm install -g hexo-cli #安装hexo</span><br><span class="line">hexo init &lt;folder&gt; #初始化项目</span><br><span class="line">cd &lt;folder&gt; #进入项目文件夹</span><br><span class="line">npm install #安装必备组件</span><br></pre></td></tr></table></figure></div>
+<h2 id="hexo安装"><a href="#hexo安装" class="headerlink" title="hexo安装"></a>hexo安装</h2><div class="highlight-container" data-rel="Shell"><figure class="iseeu highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta prompt_">#</span><span class="language-bash">安装hexo</span></span><br><span class="line">npm install -g hexo-cli </span><br><span class="line"><span class="meta prompt_">#</span><span class="language-bash">初始化项目</span></span><br><span class="line">hexo init &lt;folder&gt;     </span><br><span class="line"><span class="meta prompt_">#</span><span class="language-bash">进入项目文件夹</span></span><br><span class="line">cd &lt;folder&gt; </span><br><span class="line"><span class="meta prompt_">#</span><span class="language-bash">安装必备组件</span></span><br><span class="line">npm install </span><br></pre></td></tr></table></figure></div>
 
 <h2 id="主题安装"><a href="#主题安装" class="headerlink" title="主题安装"></a>主题安装</h2><p><a class="link"   target="_blank" rel="noopener" href="https://hexo.io/themes/" >主题参考<i class="fa-solid fa-up-right-from-square"></i></a></p>
 <ol>
 <li>选择主题下载<div class="highlight-container" data-rel="Shell"><figure class="iseeu highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git clone -b master https://github.com/Longlongyu/hexo-theme-Cxo themes/Cxo</span><br></pre></td></tr></table></figure></div>
-2.更改配置文件<code>_config.yml</code></li>
+2.更改配置文件<code>_config.yml</code>，注意将themes文件夹下的主题文件夹改为与配置的名字一致</li>
 </ol>
 <div class="highlight-container" data-rel="Yaml"><figure class="iseeu highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Extensions</span></span><br><span class="line"><span class="comment">## Plugins: https://hexo.io/plugins/</span></span><br><span class="line"><span class="comment">## Themes: https://hexo.io/themes/</span></span><br><span class="line"><span class="attr">theme:</span> <span class="string">Cxo</span></span><br></pre></td></tr></table></figure></div>
 
-<p>3.执行<code>hexo clean hexo g hexo d</code></p>
+<p>3.执行命令包括清除、生成、部署</p>
+<div class="highlight-container" data-rel="Shell"><figure class="iseeu highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">hexo clean </span><br><span class="line">hexo g </span><br><span class="line">hexo d</span><br></pre></td></tr></table></figure></div>
+
+
+
 <h2 id="GitHub配置"><a href="#GitHub配置" class="headerlink" title="GitHub配置"></a>GitHub配置</h2><ol>
 <li>创建仓库</li>
 </ol>
-<p>新建一个名为<code>你的用户名.github.io</code>的仓库，如果你的github用户名是test，那么你就新建<code>test.github.io</code>的仓库。将来你的网站访问地址就是 <a class="link"   target="_blank" rel="noopener" href="https://test.gtihub.io/" >https://test.gtihub.io<i class="fa-solid fa-up-right-from-square"></i></a></p>
+<p>新建一个名为<code>yourusername.github.io</code>的仓库，如果你的github用户名是test，那么你就新建<code>test.github.io</code>的仓库。将来你的网站访问地址就是 <a class="link"   target="_blank" rel="noopener" href="https://test.gtihub.io/" >https://test.gtihub.io<i class="fa-solid fa-up-right-from-square"></i></a></p>
 <ol start="2">
 <li><p>配置SSH key</p>
 <p>1、运行命令： <code>ssh-keygen -t rsa -c &quot;邮件地址&quot;</code> 。邮件地址可以登录你的github - <code>setting</code> - <code>emails</code> 查看<br>2、然后连续3次回车，最终会生成一个文件在用户目录下<br>3、打开用户目录，找到 <code>.ssh\id_rsa.pub</code> 文件，记事本打开并复制里面的内容<br>4、打开你的github主页，进入 <code>个人设置</code> - <code>ssh and gpg keys</code> - <code>new ssh key</code>将刚复制的内容粘贴到key那里，title随便填，保存。<br>5、测试连接 运行命令： <code>ssh -t git@github.com</code> 。<strong>注意这条命令不用修改，直接运行</strong><br>6、全局配置</p>
@@ -268,7 +272,7 @@
 
 
 
-
+<h2 id="常见问题"><a href="#常见问题" class="headerlink" title="常见问题"></a>常见问题</h2><h3 id="1-hexo-d出现"><a href="#1-hexo-d出现" class="headerlink" title="1.hexo d出现"></a>1.hexo d出现</h3>
             </div>
 
             
@@ -334,7 +338,7 @@
                 <div class="post-toc-wrap">
     <div class="post-toc">
         <div style="font-size: 1.3rem;margin-top: 0; margin-bottom: 0.8rem; transition-duration: 0.1s;"><i class="fa-solid fa-list"></i> <strong>Contents</strong></div>
-        <ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#hexo%E6%90%AD%E5%BB%BA%E6%95%99%E7%A8%8B"><span class="nav-text">hexo搭建教程</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%8E%AF%E5%A2%83%E5%AE%89%E8%A3%85"><span class="nav-text">环境安装</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#hexo%E5%AE%89%E8%A3%85"><span class="nav-text">hexo安装</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B8%BB%E9%A2%98%E5%AE%89%E8%A3%85"><span class="nav-text">主题安装</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#GitHub%E9%85%8D%E7%BD%AE"><span class="nav-text">GitHub配置</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8D%9A%E5%AE%A2%E5%88%9B%E5%BB%BA"><span class="nav-text">博客创建</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%85%8D%E7%BD%AE-config-yml"><span class="nav-text">配置 __config.yml</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%88%9B%E5%BB%BA%E5%8D%9A%E5%AE%A2"><span class="nav-text">创建博客</span></a></li></ol></li></ol></li></ol>
+        <ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#hexo%E6%90%AD%E5%BB%BA%E6%95%99%E7%A8%8B"><span class="nav-text">hexo搭建教程</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%8E%AF%E5%A2%83%E5%AE%89%E8%A3%85"><span class="nav-text">环境安装</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#hexo%E5%AE%89%E8%A3%85"><span class="nav-text">hexo安装</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B8%BB%E9%A2%98%E5%AE%89%E8%A3%85"><span class="nav-text">主题安装</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#GitHub%E9%85%8D%E7%BD%AE"><span class="nav-text">GitHub配置</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8D%9A%E5%AE%A2%E5%88%9B%E5%BB%BA"><span class="nav-text">博客创建</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%85%8D%E7%BD%AE-config-yml"><span class="nav-text">配置 __config.yml</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%88%9B%E5%BB%BA%E5%8D%9A%E5%AE%A2"><span class="nav-text">创建博客</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%B8%B8%E8%A7%81%E9%97%AE%E9%A2%98"><span class="nav-text">常见问题</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-hexo-d%E5%87%BA%E7%8E%B0"><span class="nav-text">1.hexo d出现</span></a></li></ol></li></ol></li></ol>
     </div>
 </div>
             </div>

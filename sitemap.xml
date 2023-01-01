@@ -29,6 +29,13 @@
 
   
   <url>
+    <loc>http://windinjuries.github.io/tags/neovim/</loc>
+    <lastmod>2023-01-01</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
     <loc>http://windinjuries.github.io/tags/hexo/</loc>
     <lastmod>2023-01-01</lastmod>
     <changefreq>weekly</changefreq>
@@ -37,13 +44,6 @@
   
   <url>
     <loc>http://windinjuries.github.io/tags/github/</loc>
-    <lastmod>2023-01-01</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>http://windinjuries.github.io/tags/neovim/</loc>
     <lastmod>2023-01-01</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
