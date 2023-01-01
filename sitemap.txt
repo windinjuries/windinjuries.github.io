@@ -1,4 +1,0 @@
-http://windinjuries.github.io/2023/01/01/hexo-github-blog/
-http://windinjuries.github.io/
-http://windinjuries.github.io/tags/hexo/
-http://windinjuries.github.io/tags/github/
