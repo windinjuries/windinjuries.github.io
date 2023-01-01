@@ -2379,6 +2379,25 @@ pre .deletion {
   opacity: 1;
   transform: translateX(0);
 }
+.side-tools-container .exposed-tools-list .tool-scroll-to-top {
+  display: none;
+}
+.side-tools-container .exposed-tools-list .tool-scroll-to-top.show {
+  display: flex;
+}
+.side-tools-container .exposed-tools-list .tool-scroll-to-top:hover .percent {
+  display: none;
+}
+.side-tools-container .exposed-tools-list .tool-scroll-to-top:hover .arrow-up {
+  display: flex;
+}
+.side-tools-container .exposed-tools-list .tool-scroll-to-top .arrow-up {
+  display: none;
+}
+.side-tools-container .exposed-tools-list .tool-scroll-to-top .percent {
+  display: flex;
+  font-size: 1rem;
+}
 .archive-list-container .archive-item {
   margin-bottom: 38px;
 }
@@ -2698,14 +2717,14 @@ pre .deletion {
 }
 @media (prefers-color-scheme: dark) {
   .first-screen-container {
-    background: url("https://evan.beee.top/img/wallhaven-wqery6-dark.webp") center center/cover no-repeat !important;
+    background: url("images/1.jpg") center center/cover no-repeat !important;
   }
 }
 .light-mode .first-screen-container {
   background: url("https://evan.beee.top/img/wallhaven-wqery6-light.webp") center center/cover no-repeat !important;
 }
 .dark-mode .first-screen-container {
-  background: url("https://evan.beee.top/img/wallhaven-wqery6-dark.webp") center center/cover no-repeat !important;
+  background: url("images/1.jpg") center center/cover no-repeat !important;
 }
 .image-viewer-container {
   position: fixed;
