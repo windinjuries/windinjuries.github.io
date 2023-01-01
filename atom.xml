@@ -46,14 +46,17 @@
     <link href="http://windinjuries.github.io/2022/12/23/neovim%E6%95%99%E7%A8%8B/"/>
     <id>http://windinjuries.github.io/2022/12/23/neovim%E6%95%99%E7%A8%8B/</id>
     <published>2022-12-23T04:18:18.000Z</published>
-    <updated>2023-01-01T06:25:49.148Z</updated>
+    <updated>2023-01-01T08:19:37.023Z</updated>
     
-    <content type="html"><![CDATA[<h1 id="neovim"><a href="#neovim" class="headerlink" title="neovim"></a>neovim</h1><h2 id="配置方式"><a href="#配置方式" class="headerlink" title="配置方式"></a>配置方式</h2><h3 id="vim"><a href="#vim" class="headerlink" title="vim"></a>vim</h3><p>配置文件路径</p><div class="highlight-container" data-rel="Bash"><figure class="iseeu highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">~/.config/nvim/init.vim</span><br></pre></td></tr></table></figure></div><h3 id="lua"><a href="#lua" class="headerlink" title="lua"></a>lua</h3><p>配置文件路径：</p><div class="highlight-container" data-rel="Bash"><figure class="iseeu highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">~/.config/nvim/init.lua</span><br></pre></td></tr></table></figure></div><p>.vim可以调用.lua配置文件，实现混合配置</p>]]></content>
+    <content type="html"><![CDATA[<img                       lazyload                     src="/images/loading.svg"                     data-src="https://picx.zhimg.com/v2-300e97a93f78e336e63861b9b6df9910_r.jpg?source=172ae18b1b9b6df9910_r.jpg"                      alt="neovim" style="zoom: 67%;"                 ><h1 id="neovim"><a href="#neovim" class="headerlink" title="neovim"></a>neovim</h1><h2 id="配置方式"><a href="#配置方式" class="headerlink" title="配置方式"></a>配置方式</h2><h3 id="vim"><a href="#vim" class="headerlink" title="vim"></a>vim</h3><p>配置文件路径</p><div class="highlight-container" data-rel="Bash"><figure class="iseeu highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">~/.config/nvim/init.vim</span><br></pre></td></tr></table></figure></div><h3 id="lua"><a href="#lua" class="headerlink" title="lua"></a>lua</h3><p>配置文件路径：</p><div class="highlight-container" data-rel="Bash"><figure class="iseeu highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">~/.config/nvim/init.lua</span><br></pre></td></tr></table></figure></div><p>.vim可以调用.lua配置文件，实现混合配置</p>]]></content>
     
     
       
       
-    <summary type="html">&lt;h1 id=&quot;neovim&quot;&gt;&lt;a href=&quot;#neovim&quot; class=&quot;headerlink&quot; title=&quot;neovim&quot;&gt;&lt;/a&gt;neovim&lt;/h1&gt;&lt;h2 id=&quot;配置方式&quot;&gt;&lt;a href=&quot;#配置方式&quot; class=&quot;headerlink&quot; title=&quot;配</summary>
+    <summary type="html">&lt;img  
+                     lazyload
+                     src=&quot;/images/loading.svg&quot;
+                     data-src=&quot;https://picx.zhimg.com/v2</summary>
       
     
     

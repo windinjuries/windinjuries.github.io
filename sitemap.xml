@@ -2,7 +2,7 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>http://windinjuries.github.io/2023/01/01/hexo-github-blog/</loc>
+    <loc>http://windinjuries.github.io/2022/12/23/neovim%E6%95%99%E7%A8%8B/</loc>
     
     <lastmod>2023-01-01</lastmod>
     
@@ -11,7 +11,7 @@
   </url>
   
   <url>
-    <loc>http://windinjuries.github.io/2022/12/23/neovim%E6%95%99%E7%A8%8B/</loc>
+    <loc>http://windinjuries.github.io/2023/01/01/hexo-github-blog/</loc>
     
     <lastmod>2023-01-01</lastmod>
     
@@ -29,13 +29,6 @@
 
   
   <url>
-    <loc>http://windinjuries.github.io/tags/neovim/</loc>
-    <lastmod>2023-01-01</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
     <loc>http://windinjuries.github.io/tags/hexo/</loc>
     <lastmod>2023-01-01</lastmod>
     <changefreq>weekly</changefreq>
@@ -44,6 +37,13 @@
   
   <url>
     <loc>http://windinjuries.github.io/tags/github/</loc>
+    <lastmod>2023-01-01</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>http://windinjuries.github.io/tags/neovim/</loc>
     <lastmod>2023-01-01</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
