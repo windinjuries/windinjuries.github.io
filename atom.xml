@@ -46,17 +46,15 @@
     <link href="http://windinjuries.github.io/2022/12/23/neovim%E6%95%99%E7%A8%8B/"/>
     <id>http://windinjuries.github.io/2022/12/23/neovim%E6%95%99%E7%A8%8B/</id>
     <published>2022-12-23T04:18:18.000Z</published>
-    <updated>2023-01-01T08:19:37.023Z</updated>
+    <updated>2023-01-01T09:26:49.035Z</updated>
     
-    <content type="html"><![CDATA[<img                       lazyload                     src="/images/loading.svg"                     data-src="https://picx.zhimg.com/v2-300e97a93f78e336e63861b9b6df9910_r.jpg?source=172ae18b1b9b6df9910_r.jpg"                      alt="neovim" style="zoom: 67%;"                 ><h1 id="neovim"><a href="#neovim" class="headerlink" title="neovim"></a>neovim</h1><h2 id="配置方式"><a href="#配置方式" class="headerlink" title="配置方式"></a>配置方式</h2><h3 id="vim"><a href="#vim" class="headerlink" title="vim"></a>vim</h3><p>配置文件路径</p><div class="highlight-container" data-rel="Bash"><figure class="iseeu highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">~/.config/nvim/init.vim</span><br></pre></td></tr></table></figure></div><h3 id="lua"><a href="#lua" class="headerlink" title="lua"></a>lua</h3><p>配置文件路径：</p><div class="highlight-container" data-rel="Bash"><figure class="iseeu highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">~/.config/nvim/init.lua</span><br></pre></td></tr></table></figure></div><p>.vim可以调用.lua配置文件，实现混合配置</p>]]></content>
+    <content type="html"><![CDATA[<blockquote><p>Neovim在GitHub上自述为<em>Vim-fork focused on extensibility and usability</em>，所以自Neovim诞生以来，它就专注于提高自己的扩展性与易用性，例如内置终端、异步执行这两个比较重要的功能都是Neovim率先支持，而Vim追赶在后的。经过多年在各自赛道上的发展，Neovim与Vim已经产生了不少差异。不过现阶段来看，<strong>Neovim的特性仍然几乎是Vim的超集</strong>，也就是说除了自己独有的功能外，Neovim还支持Vim的绝大部分功能。</p></blockquote><img                       lazyload                     src="/images/loading.svg"                     data-src="https://picx.zhimg.com/v2-300e97a93f78e336e63861b9b6df9910_r.jpg?source=172ae18b1b9b6df9910_r.jpg"                      alt="neovim" style="zoom: 50%;"                 ><h1 id="neovim"><a href="#neovim" class="headerlink" title="neovim"></a>neovim</h1><h2 id="配置方式"><a href="#配置方式" class="headerlink" title="配置方式"></a>配置方式</h2><h3 id="vim"><a href="#vim" class="headerlink" title="vim"></a>vim</h3><p>配置文件路径</p><div class="highlight-container" data-rel="Bash"><figure class="iseeu highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">~/.config/nvim/init.vim</span><br></pre></td></tr></table></figure></div><h3 id="lua"><a href="#lua" class="headerlink" title="lua"></a>lua</h3><p>配置文件路径：</p><div class="highlight-container" data-rel="Bash"><figure class="iseeu highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">~/.config/nvim/init.lua</span><br></pre></td></tr></table></figure></div><p>.vim可以调用.lua配置文件，实现混合配置 ，或者是纯lua编程，接下来所有配置采用Lua编程方式</p><h2 id="插件管理"><a href="#插件管理" class="headerlink" title="插件管理"></a>插件管理</h2>]]></content>
     
     
       
       
-    <summary type="html">&lt;img  
-                     lazyload
-                     src=&quot;/images/loading.svg&quot;
-                     data-src=&quot;https://picx.zhimg.com/v2</summary>
+    <summary type="html">&lt;blockquote&gt;
+&lt;p&gt;Neovim在GitHub上自述为&lt;em&gt;Vim-fork focused on extensibility and usability&lt;/em&gt;，所以自Neovim诞生以来，它就专注于提高自己的扩展性与易用性，例如内置终端、异步执行这两个比较重要</summary>
       
     
     

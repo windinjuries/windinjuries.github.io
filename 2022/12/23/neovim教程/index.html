@@ -231,11 +231,14 @@
             
 
             <div class="article-content markdown-body">
-                <img  
+                <blockquote>
+<p>Neovim在GitHub上自述为<em>Vim-fork focused on extensibility and usability</em>，所以自Neovim诞生以来，它就专注于提高自己的扩展性与易用性，例如内置终端、异步执行这两个比较重要的功能都是Neovim率先支持，而Vim追赶在后的。经过多年在各自赛道上的发展，Neovim与Vim已经产生了不少差异。不过现阶段来看，<strong>Neovim的特性仍然几乎是Vim的超集</strong>，也就是说除了自己独有的功能外，Neovim还支持Vim的绝大部分功能。</p>
+</blockquote>
+<img  
                      lazyload
                      src="/images/loading.svg"
                      data-src="https://picx.zhimg.com/v2-300e97a93f78e336e63861b9b6df9910_r.jpg?source=172ae18b1b9b6df9910_r.jpg"
-                      alt="neovim" style="zoom: 67%;" 
+                      alt="neovim" style="zoom: 50%;" 
                 >
 
 <h1 id="neovim"><a href="#neovim" class="headerlink" title="neovim"></a>neovim</h1><h2 id="配置方式"><a href="#配置方式" class="headerlink" title="配置方式"></a>配置方式</h2><h3 id="vim"><a href="#vim" class="headerlink" title="vim"></a>vim</h3><p>配置文件路径</p>
@@ -246,8 +249,8 @@
 <h3 id="lua"><a href="#lua" class="headerlink" title="lua"></a>lua</h3><p>配置文件路径：</p>
 <div class="highlight-container" data-rel="Bash"><figure class="iseeu highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">~/.config/nvim/init.lua</span><br></pre></td></tr></table></figure></div>
 
-<p>.vim可以调用.lua配置文件，实现混合配置</p>
-
+<p>.vim可以调用.lua配置文件，实现混合配置 ，或者是纯lua编程，接下来所有配置采用Lua编程方式</p>
+<h2 id="插件管理"><a href="#插件管理" class="headerlink" title="插件管理"></a>插件管理</h2>
             </div>
 
             
@@ -309,7 +312,7 @@
                 <div class="post-toc-wrap">
     <div class="post-toc">
         <div style="font-size: 1.3rem;margin-top: 0; margin-bottom: 0.8rem; transition-duration: 0.1s;"><i class="fa-solid fa-list"></i> <strong>Contents</strong></div>
-        <ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#neovim"><span class="nav-text">neovim</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%85%8D%E7%BD%AE%E6%96%B9%E5%BC%8F"><span class="nav-text">配置方式</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#vim"><span class="nav-text">vim</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#lua"><span class="nav-text">lua</span></a></li></ol></li></ol></li></ol>
+        <ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#neovim"><span class="nav-text">neovim</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%85%8D%E7%BD%AE%E6%96%B9%E5%BC%8F"><span class="nav-text">配置方式</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#vim"><span class="nav-text">vim</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#lua"><span class="nav-text">lua</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%8F%92%E4%BB%B6%E7%AE%A1%E7%90%86"><span class="nav-text">插件管理</span></a></li></ol></li></ol>
     </div>
 </div>
             </div>
