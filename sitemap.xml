@@ -38,14 +38,14 @@
 
   
   <url>
-    <loc>http://windinjuries.github.io/tags/neovim/</loc>
+    <loc>http://windinjuries.github.io/tags/git/</loc>
     <lastmod>2023-01-23</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>http://windinjuries.github.io/tags/git/</loc>
+    <loc>http://windinjuries.github.io/tags/neovim/</loc>
     <lastmod>2023-01-23</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
