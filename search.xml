@@ -67,52 +67,6 @@
       </tags>
   </entry>
   <entry>
-    <title>hexo + github = blog</title>
-    <url>/2023/01/01/hexo-github-blog/</url>
-    <content><![CDATA[<blockquote>
-<p><code>Hexo + GitHub</code>可以组成免费的个人博客网站，<code>Hexo</code>是高效的静态网站生成框架，它基于<code>Node.js</code>，快速，简单且功能强大，是搭建博客的首选框架。大家可以进入Hexo官网进行详细查看，因为<code>Hexo</code>的创建者是台湾人，对中文的支持很友好，可以选择中文进行查看。通过<code>Hexo</code>，你可以直接使用<code>Markdown</code>语法来撰写博客。写完后只需两三条命令即可将生成的网页上传到<code>github</code>或者<code>coding</code>等代码管理托管平台。</p>
-</blockquote>
-<h1 id="hexo搭建教程"><a href="#hexo搭建教程" class="headerlink" title="hexo搭建教程"></a>hexo搭建教程</h1><h2 id="环境安装"><a href="#环境安装" class="headerlink" title="环境安装"></a>环境安装</h2><ul>
-<li>Node.js</li>
-<li>git</li>
-<li>python3</li>
-</ul>
-<h2 id="hexo安装"><a href="#hexo安装" class="headerlink" title="hexo安装"></a>hexo安装</h2><div class="highlight-container" data-rel="Shell"><figure class="iseeu highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta prompt_">#</span><span class="language-bash">安装hexo</span></span><br><span class="line">npm install -g hexo-cli </span><br><span class="line"><span class="meta prompt_">#</span><span class="language-bash">初始化项目</span></span><br><span class="line">hexo init &lt;folder&gt;     </span><br><span class="line"><span class="meta prompt_">#</span><span class="language-bash">进入项目文件夹</span></span><br><span class="line">cd &lt;folder&gt; </span><br><span class="line"><span class="meta prompt_">#</span><span class="language-bash">安装必备组件</span></span><br><span class="line">npm install</span><br></pre></td></tr></table></figure></div>
-
-<h2 id="主题安装"><a href="#主题安装" class="headerlink" title="主题安装"></a>主题安装</h2><p><a class="link"   href="https://hexo.io/themes/" >主题参考<i class="fa-solid fa-up-right-from-square"></i></a></p>
-<ol>
-<li>选择主题下载</li>
-</ol>
-<div class="highlight-container" data-rel="Shell"><figure class="iseeu highlight shell"><table><tr><td class="code"><pre><span class="line">git clone -b master https://github.com/Longlongyu/hexo-theme-Cxo themes/Cxo</span><br></pre></td></tr></table></figure></div>
-
-<p>2.更改配置文件<code>_config.yml</code>，注意将themes文件夹下的主题文件夹改为与配置的名字一致</p>
-<div class="highlight-container" data-rel="Yaml"><figure class="iseeu highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="comment"># Extensions</span></span><br><span class="line"><span class="comment">## Plugins: https://hexo.io/plugins/</span></span><br><span class="line"><span class="comment">## Themes: https://hexo.io/themes/</span></span><br><span class="line"><span class="attr">theme:</span> <span class="string">Cxo</span></span><br></pre></td></tr></table></figure></div>
-
-<p>3.执行命令包括清除、生成、部署</p>
-<div class="highlight-container" data-rel="Shell"><figure class="iseeu highlight shell"><table><tr><td class="code"><pre><span class="line">hexo clean </span><br><span class="line">hexo g </span><br><span class="line">hexo d</span><br></pre></td></tr></table></figure></div>
-
-<h2 id="GitHub配置"><a href="#GitHub配置" class="headerlink" title="GitHub配置"></a>GitHub配置</h2><ol>
-<li>创建仓库</li>
-</ol>
-<p>新建一个名为<code>yourusername.github.io</code>的仓库，如果你的github用户名是test，那么你就新建<code>test.github.io</code>的仓库。将来你的网站访问地址就是 <a class="link"   href="https://test.gtihub.io/" >https://test.gtihub.io<i class="fa-solid fa-up-right-from-square"></i></a></p>
-<ol start="2">
-<li><p>配置SSH key</p>
-<p>1、运行命令： <code>ssh-keygen -t rsa -c &quot;邮件地址&quot;</code> 。邮件地址可以登录你的github - <code>setting</code> - <code>emails</code> 查看<br>2、然后连续3次回车，最终会生成一个文件在用户目录下<br>3、打开用户目录，找到 <code>.ssh\id_rsa.pub</code> 文件，记事本打开并复制里面的内容<br>4、打开你的github主页，进入 <code>个人设置</code> - <code>ssh and gpg keys</code> - <code>new ssh key</code>将刚复制的内容粘贴到key那里，title随便填，保存。<br>5、测试连接 运行命令： <code>ssh -t git@github.com</code> 。<strong>注意这条命令不用修改，直接运行</strong><br>6、全局配置</p>
-<div class="highlight-container" data-rel="Shell"><figure class="iseeu highlight shell"><table><tr><td class="code"><pre><span class="line">git config --global user.name &quot;selier&quot;         #你的github用户名，非昵称</span><br><span class="line">git config --global user.email  &quot;邮箱@qq.com&quot;  # 填写你的github注册邮箱</span><br></pre></td></tr></table></figure></div></li>
-</ol>
-<h2 id="博客创建"><a href="#博客创建" class="headerlink" title="博客创建"></a>博客创建</h2><h3 id="配置-config-yml"><a href="#配置-config-yml" class="headerlink" title="配置 __config.yml"></a>配置 <code>__config.yml</code></h3><div class="highlight-container" data-rel="Yaml"><figure class="iseeu highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="comment">#配置发布方式</span></span><br><span class="line"><span class="attr">deploy:</span></span><br><span class="line">  <span class="attr">type:</span> <span class="string">git</span></span><br><span class="line">  <span class="attr">repo:</span> <span class="string">https://github.com/windinjuries/windinjuries.github.io.git</span></span><br><span class="line">  <span class="attr">branch:</span> <span class="string">main</span></span><br></pre></td></tr></table></figure></div>
-
-<h3 id="创建博客"><a href="#创建博客" class="headerlink" title="创建博客"></a>创建博客</h3><div class="highlight-container" data-rel="Shell"><figure class="iseeu highlight shell"><table><tr><td class="code"><pre><span class="line">hexo clean </span><br><span class="line">hexo new &quot;postName&quot; #新建文章</span><br><span class="line">hexo new page &quot;pageName&quot; #新建页面</span><br><span class="line">hexo generate #生成静态页面至public目录</span><br><span class="line">hexo server #开启预览访问端口（默认端口4000，&#x27;ctrl + c&#x27;关闭server）</span><br><span class="line">hexo deploy #部署到GitHub</span><br></pre></td></tr></table></figure></div>
-
-<h2 id="常见问题"><a href="#常见问题" class="headerlink" title="常见问题"></a>常见问题</h2><h3 id="1-hexo-d出现"><a href="#1-hexo-d出现" class="headerlink" title="1.hexo d出现"></a>1.hexo d出现</h3><h3 id="2-node-环境变量windows与WSL冲突"><a href="#2-node-环境变量windows与WSL冲突" class="headerlink" title="2.node 环境变量windows与WSL冲突"></a>2.node 环境变量windows与WSL冲突</h3><div class="highlight-container" data-rel="Shell"><figure class="iseeu highlight shell"><table><tr><td class="code"><pre><span class="line">1. D:\Anaconda3\</span><br><span class="line">2. D:\Anaconda3\Scripts\</span><br><span class="line">3. D:\Anaconda3\Library\bin\</span><br><span class="line">4. C:\Program Files\nodejs\</span><br><span class="line">//通过删除windows环境变量避免冲突</span><br></pre></td></tr></table></figure></div>
-
-]]></content>
-      <tags>
-        <tag>hexo</tag>
-        <tag>github</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>neovim tutorial</title>
     <url>/2022/12/23/neovim%E6%95%99%E7%A8%8B/</url>
     <content><![CDATA[<blockquote>
@@ -158,6 +112,52 @@
 <h2 id="主题管理"><a href="#主题管理" class="headerlink" title="主题管理"></a>主题管理</h2>]]></content>
       <tags>
         <tag>neovim</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>hexo + github = blog</title>
+    <url>/2023/01/01/hexo-github-blog/</url>
+    <content><![CDATA[<blockquote>
+<p><code>Hexo + GitHub</code>可以组成免费的个人博客网站，<code>Hexo</code>是高效的静态网站生成框架，它基于<code>Node.js</code>，快速，简单且功能强大，是搭建博客的首选框架。大家可以进入Hexo官网进行详细查看，因为<code>Hexo</code>的创建者是台湾人，对中文的支持很友好，可以选择中文进行查看。通过<code>Hexo</code>，你可以直接使用<code>Markdown</code>语法来撰写博客。写完后只需两三条命令即可将生成的网页上传到<code>github</code>或者<code>coding</code>等代码管理托管平台。</p>
+</blockquote>
+<h1 id="hexo搭建教程"><a href="#hexo搭建教程" class="headerlink" title="hexo搭建教程"></a>hexo搭建教程</h1><h2 id="环境安装"><a href="#环境安装" class="headerlink" title="环境安装"></a>环境安装</h2><ul>
+<li>Node.js</li>
+<li>git</li>
+<li>python3</li>
+</ul>
+<h2 id="hexo安装"><a href="#hexo安装" class="headerlink" title="hexo安装"></a>hexo安装</h2><div class="highlight-container" data-rel="Shell"><figure class="iseeu highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta prompt_">#</span><span class="language-bash">安装hexo</span></span><br><span class="line">npm install -g hexo-cli </span><br><span class="line"><span class="meta prompt_">#</span><span class="language-bash">初始化项目</span></span><br><span class="line">hexo init &lt;folder&gt;     </span><br><span class="line"><span class="meta prompt_">#</span><span class="language-bash">进入项目文件夹</span></span><br><span class="line">cd &lt;folder&gt; </span><br><span class="line"><span class="meta prompt_">#</span><span class="language-bash">安装必备组件</span></span><br><span class="line">npm install</span><br></pre></td></tr></table></figure></div>
+
+<h2 id="主题安装"><a href="#主题安装" class="headerlink" title="主题安装"></a>主题安装</h2><p><a class="link"   href="https://hexo.io/themes/" >主题参考<i class="fa-solid fa-up-right-from-square"></i></a></p>
+<ol>
+<li>选择主题下载</li>
+</ol>
+<div class="highlight-container" data-rel="Shell"><figure class="iseeu highlight shell"><table><tr><td class="code"><pre><span class="line">git clone -b master https://github.com/Longlongyu/hexo-theme-Cxo themes/Cxo</span><br></pre></td></tr></table></figure></div>
+
+<p>2.更改配置文件<code>_config.yml</code>，注意将themes文件夹下的主题文件夹改为与配置的名字一致</p>
+<div class="highlight-container" data-rel="Yaml"><figure class="iseeu highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="comment"># Extensions</span></span><br><span class="line"><span class="comment">## Plugins: https://hexo.io/plugins/</span></span><br><span class="line"><span class="comment">## Themes: https://hexo.io/themes/</span></span><br><span class="line"><span class="attr">theme:</span> <span class="string">Cxo</span></span><br></pre></td></tr></table></figure></div>
+
+<p>3.执行命令包括清除、生成、部署</p>
+<div class="highlight-container" data-rel="Shell"><figure class="iseeu highlight shell"><table><tr><td class="code"><pre><span class="line">hexo clean </span><br><span class="line">hexo g </span><br><span class="line">hexo d</span><br></pre></td></tr></table></figure></div>
+
+<h2 id="GitHub配置"><a href="#GitHub配置" class="headerlink" title="GitHub配置"></a>GitHub配置</h2><ol>
+<li>创建仓库</li>
+</ol>
+<p>新建一个名为<code>yourusername.github.io</code>的仓库，如果你的github用户名是test，那么你就新建<code>test.github.io</code>的仓库。将来你的网站访问地址就是 <a class="link"   href="https://test.gtihub.io/" >https://test.gtihub.io<i class="fa-solid fa-up-right-from-square"></i></a></p>
+<ol start="2">
+<li><p>配置SSH key</p>
+<p>1、运行命令： <code>ssh-keygen -t rsa -c &quot;邮件地址&quot;</code> 。邮件地址可以登录你的github - <code>setting</code> - <code>emails</code> 查看<br>2、然后连续3次回车，最终会生成一个文件在用户目录下<br>3、打开用户目录，找到 <code>.ssh\id_rsa.pub</code> 文件，记事本打开并复制里面的内容<br>4、打开你的github主页，进入 <code>个人设置</code> - <code>ssh and gpg keys</code> - <code>new ssh key</code>将刚复制的内容粘贴到key那里，title随便填，保存。<br>5、测试连接 运行命令： <code>ssh -t git@github.com</code> 。<strong>注意这条命令不用修改，直接运行</strong><br>6、全局配置</p>
+<div class="highlight-container" data-rel="Shell"><figure class="iseeu highlight shell"><table><tr><td class="code"><pre><span class="line">git config --global user.name &quot;selier&quot;         #你的github用户名，非昵称</span><br><span class="line">git config --global user.email  &quot;邮箱@qq.com&quot;  # 填写你的github注册邮箱</span><br></pre></td></tr></table></figure></div></li>
+</ol>
+<h2 id="博客创建"><a href="#博客创建" class="headerlink" title="博客创建"></a>博客创建</h2><h3 id="配置-config-yml"><a href="#配置-config-yml" class="headerlink" title="配置 __config.yml"></a>配置 <code>__config.yml</code></h3><div class="highlight-container" data-rel="Yaml"><figure class="iseeu highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="comment">#配置发布方式</span></span><br><span class="line"><span class="attr">deploy:</span></span><br><span class="line">  <span class="attr">type:</span> <span class="string">git</span></span><br><span class="line">  <span class="attr">repo:</span> <span class="string">https://github.com/windinjuries/windinjuries.github.io.git</span></span><br><span class="line">  <span class="attr">branch:</span> <span class="string">main</span></span><br></pre></td></tr></table></figure></div>
+
+<h3 id="创建博客"><a href="#创建博客" class="headerlink" title="创建博客"></a>创建博客</h3><div class="highlight-container" data-rel="Shell"><figure class="iseeu highlight shell"><table><tr><td class="code"><pre><span class="line">hexo clean </span><br><span class="line">hexo new &quot;postName&quot; #新建文章</span><br><span class="line">hexo new page &quot;pageName&quot; #新建页面</span><br><span class="line">hexo generate #生成静态页面至public目录</span><br><span class="line">hexo server #开启预览访问端口（默认端口4000，&#x27;ctrl + c&#x27;关闭server）</span><br><span class="line">hexo deploy #部署到GitHub</span><br></pre></td></tr></table></figure></div>
+
+<h2 id="常见问题"><a href="#常见问题" class="headerlink" title="常见问题"></a>常见问题</h2><h3 id="1-hexo-d出现"><a href="#1-hexo-d出现" class="headerlink" title="1.hexo d出现"></a>1.hexo d出现</h3><h3 id="2-node-环境变量windows与WSL冲突"><a href="#2-node-环境变量windows与WSL冲突" class="headerlink" title="2.node 环境变量windows与WSL冲突"></a>2.node 环境变量windows与WSL冲突</h3><div class="highlight-container" data-rel="Shell"><figure class="iseeu highlight shell"><table><tr><td class="code"><pre><span class="line">1. D:\Anaconda3\</span><br><span class="line">2. D:\Anaconda3\Scripts\</span><br><span class="line">3. D:\Anaconda3\Library\bin\</span><br><span class="line">4. C:\Program Files\nodejs\</span><br><span class="line">//通过删除windows环境变量避免冲突</span><br></pre></td></tr></table></figure></div>
+
+]]></content>
+      <tags>
+        <tag>hexo</tag>
+        <tag>github</tag>
       </tags>
   </entry>
 </search>

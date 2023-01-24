@@ -34,6 +34,10 @@
 
     
     
+        
+<link rel="stylesheet" href="/css/light.min.css">
+
+    
     
     
 <link rel="stylesheet" href="/css/css2.css">
@@ -41,7 +45,7 @@
     <script id="hexo-configurations">
     let REDEFINE = window.REDEFINE || {};
     REDEFINE.hexo_config = {"hostname":"windinjuries.github.io","root":"/","language":"en","path":"search.xml"};
-    REDEFINE.theme_config = {"toc":{"enable":true,"number":false,"expand_all":true,"init_open":true},"style":{"primary_color":"#005080","avatar":"/images/redefine-avatar.svg","favicon":"/images/redefine-logo.svg","article_img_align":"center","right_side_width":"210px","content_max_width":"1000px","nav_color":{"left":"#f78736","right":"#367df7","transparency":35},"hover":{"shadow":true,"scale":false},"first_screen":{"enable":true,"background_image":{"light":"https://s2.loli.net/2023/01/01/Gy6HJivoBEmutrx.jpg","dark":"https://evan.beee.top/img/wallhaven-wqery6-dark.webp"},"title_color":{"light":"#fff","dark":"#d1d1b6"},"description":"Wind's Blog"},"scroll":{"progress_bar":{"enable":true},"percent":{"enable":false}}},"local_search":{"enable":true,"preload":true},"code_block":{"copy":true,"style":"simple"},"pjax":{"enable":true},"lazyload":{"enable":true},"version":"1.0.0","friend_links":{"columns":2}};
+    REDEFINE.theme_config = {"toc":{"enable":true,"number":false,"expand_all":true,"init_open":true},"style":{"primary_color":"#005080","avatar":"https://s2.loli.net/2023/01/01/Gy6HJivoBEmutrx.jpg","favicon":"/images/redefine-logo.svg","article_img_align":"center","right_side_width":"210px","content_max_width":"1000px","nav_color":{"left":"#f78736","right":"#367df7","transparency":35},"hover":{"shadow":true,"scale":true},"first_screen":{"enable":true,"background_image":{"light":"https://s2.loli.net/2023/01/01/Gy6HJivoBEmutrx.jpg","dark":"https://s2.loli.net/2023/01/01/Gy6HJivoBEmutrx.jpg"},"title_color":{"light":"#fff","dark":"#d1d1b6"},"description":"Wind's Blog"},"scroll":{"progress_bar":{"enable":true},"percent":{"enable":true}}},"local_search":{"enable":true,"preload":true},"code_block":{"copy":true,"style":"simple"},"pjax":{"enable":true},"lazyload":{"enable":true},"version":"1.0.0","friend_links":{"columns":2}};
     REDEFINE.language_ago = {"second":"%s seconds ago","minute":"%s minutes ago","hour":"%s hours ago","day":"%s days ago","week":"%s weeks ago","month":"%s months ago","year":"%s years ago"};
   </script>
 <meta name="generator" content="Hexo 6.3.0"><link rel="alternate" href="/atom.xml" title="Jin's Blog" type="application/atom+xml">
@@ -324,10 +328,6 @@
         
 
         
-            <li class="tools-item tool-scroll-to-top flex-center">
-                <i class="fa-solid fa-arrow-up"></i>
-            </li>
-        
 
         <li class="tools-item tool-scroll-to-bottom flex-center">
             <i class="fa-solid fa-arrow-down"></i>
@@ -338,6 +338,11 @@
         <li class="tools-item tool-toggle-show flex-center">
             <i class="fa-solid fa-cog fa-spin"></i>
         </li>
+        
+            <li class="tools-item tool-scroll-to-top flex-center">
+                <i class="arrow-up fas fa-arrow-up"></i>
+                <span class="percent"></span>
+            </li>
         
     </ul>
 </div>
