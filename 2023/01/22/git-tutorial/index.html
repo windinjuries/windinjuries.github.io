@@ -1,0 +1,1241 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="keywords" content="Hexo Theme Redefine">
+    <meta name="description" content="Hexo Theme Redefine">
+    <meta name="author" content="Wind">
+    
+    <title>
+        
+            git-tutorial |
+        
+        Wind&#39;s Blog
+    </title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://evan.beee.top" crossorigin>
+    
+<link rel="stylesheet" href="/css/style.css">
+
+    <link rel="shortcut icon" href="/images/logo.svg">
+    
+<link rel="stylesheet" href="/css/fontawesome.min.css">
+
+    
+<link rel="stylesheet" href="/css/brands.min.css">
+
+    
+<link rel="stylesheet" href="/css/solid.min.css">
+
+    
+<link rel="stylesheet" href="/css/regular.min.css">
+
+    
+    
+    
+    
+<link rel="stylesheet" href="/css/css2.css">
+
+    <script id="hexo-configurations">
+    let REDEFINE = window.REDEFINE || {};
+    REDEFINE.hexo_config = {"hostname":"windinjuries.github.io","root":"/","language":"en"};
+    REDEFINE.theme_config = {"toc":{"enable":true,"number":false,"expand_all":true,"init_open":true},"style":{"primary_color":"#005080","avatar":"/images/avatar.svg","favicon":"/images/logo.svg","article_img_align":"center","right_side_width":"210px","content_max_width":"1000px","nav_color":{"left":"#f78736","right":"#367df7","transparency":35},"hover":{"shadow":true,"scale":false},"first_screen":{"enable":true,"background_image":{"light":"https://s2.loli.net/2023/01/01/Gy6HJivoBEmutrx.jpg","dark":"https://s2.loli.net/2023/01/01/Gy6HJivoBEmutrx.jpg"},"title_color":{"light":"#fff","dark":"#d1d1b6"},"description":"Theme Redefine"},"scroll":{"progress_bar":{"enable":true},"percent":{"enable":true}}},"local_search":{"enable":false,"preload":true},"code_block":{"copy":true,"style":"mac"},"pjax":{"enable":true},"lazyload":{"enable":true},"version":"0.4.5","friend_links":{"columns":2}};
+    REDEFINE.language_ago = {"second":"%s seconds ago","minute":"%s minutes ago","hour":"%s hours ago","day":"%s days ago","week":"%s weeks ago","month":"%s months ago","year":"%s years ago"};
+  </script>
+<meta name="generator" content="Hexo 6.3.0"><link rel="alternate" href="/atom.xml" title="Jin's Blog" type="application/atom+xml">
+</head>
+
+
+<body>
+.progress-bar-container {
+  position fixed
+  top 0
+  left 0
+  width 100%
+  z-index $z-index-9
+
+  if (hexo-config('pjax.enable') == true) {
+
+    .pjax-progress-bar {
+      position absolute
+      top 0
+      left 0
+      height 2px
+      width 0
+      background var(--pjax-progress-bar-color)
+      visibility hidden
+      opacity 0
+      z-index $z-index-8
+      transition-t("width", "0", "0.1", "linear")
+
+
+      &.show {
+        opacity 1
+        visibility visible
+      }
+    }
+
+
+    .pjax-progress-icon {
+      position absolute
+      top 0
+      right 0
+      z-index $z-index-8
+      display flex
+      align-items center
+      justify-content center
+      padding 7px 6px 0 0
+      visibility hidden
+      font-size 1.1rem
+      color var(--default-text-color)
+
+      +redefine-tablet() {
+        padding 6px 5px 0 0
+        font-size 1rem
+      }
+
+      &.show {
+        visibility visible
+      }
+    }
+
+  }
+
+  if (hexo-config('style.scroll.progress_bar.enable') == true) {
+
+    .scroll-progress-bar {
+      position absolute
+      top 0
+      left 0
+      width 0
+      height $scroll-progress-bar-height
+      visibility hidden
+      z-index $z-index-7
+      background var(--primary-color)
+      transition-t("width", "0", "0.1", "linear")
+
+      &.hide {
+        display none !important
+      }
+    }
+
+  }
+}
+
+<main class="page-container">
+
+    
+
+    <div class="page-main-content">
+
+        <div class="page-main-content-top">
+            $logo-title-font-size = 2rem
+$pc-search-icon-font-size = 1.5rem
+$menu-bar-line-height = 2.5px
+$logo-image-box-width = 46px
+
+.header-wrapper {
+  font-family "Optima Medium", sans-serif
+  width 100%
+  height 100%
+  box-sizing border-box
+  display flex
+  align-items center
+  justify-content center
+  background $nav-color-bg
+  -webkit-backdrop-filter blur(10px)
+  backdrop-filter blur(10px)
+  padding-top $scroll-progress-bar-height
+
+  hover-style(false, 0, 0)
+
+  .header-content {
+    position relative
+    height 100%
+    width $main-content-width
+    max-width $content-max-width
+    display flex
+    flex-direction row
+    justify-content space-between
+    align-items center
+    z-index $z-index-5
+
+
+    &.has-first-screen {
+      max-width $content-max-width * 1.2
+    }
+
+    +redefine-tablet() {
+      width $main-content-width-tablet
+    }
+
+    +redefine-mobile() {
+      width $main-content-width-mobile
+    }
+
+    .left {
+      display flex
+      align-items center
+      transition-t("transform", "0", "0.2", "linear")
+
+      .header-shrink & {
+        transform scale(0.72)
+        transform-origin left
+      }
+
+
+      if (hexo-config('base_info.logo_img') && hexo-config('base_info.logo_img') != '') {
+        .logo-image {
+          width $logo-image-box-width
+          height $logo-image-box-width
+          margin-right 8px
+
+
+          +redefine-tablet() {
+            width $logo-image-box-width * 0.9
+            height $logo-image-box-width * 0.9
+          }
+
+          +redefine-mobile() {
+            width $logo-image-box-width * 0.8
+            height $logo-image-box-width * 0.8
+          }
+
+          img {
+            border-radius 6px
+            width 100%
+          }
+        }
+
+      }
+
+      .logo-title {
+        font-size $logo-title-font-size
+        font-family "Optima Bold", sans-serif
+        //letter-spacing 1px
+        line-height 1
+        color var(--first-text-color)
+
+        +redefine-tablet() {
+          font-size $logo-title-font-size * 0.9
+        }
+
+        +redefine-mobile() {
+          font-size $logo-title-font-size * 0.8
+        }
+      }
+
+    }
+
+
+    .right {
+
+      .pc {
+
+        .menu-list {
+          display flex
+          align-items center
+          
+
+          +redefine-tablet() {
+            display none
+          }
+
+
+          .menu-item {
+            float left
+            padding 5px
+            position relative
+            margin-left 30px
+            font-size 1rem
+            cursor pointer
+            color var(--default-text-color)
+
+            &:first-child {
+              margin-left 0
+            }
+
+            a .fa-chevron-down{
+              transform rotate(0deg)
+              transition transform 0.3s ease
+            }
+
+            &:hover a .fa-chevron-down{
+              transform rotate(180deg)
+            }
+
+            &:hover .has-dropdown{
+              &::after {
+                display none !important
+              }
+            }
+
+            &:hover a, .active {
+              &::after {
+                content ''
+                position absolute
+                bottom -5px
+                left 50%
+                width 100%
+                height 2px
+                transform translateX(-50%)
+                background var(--primary-color)
+                transition-t("transform, bottom", "0, 0", "0.2, 0.2", "linear, linear")
+
+                .header-shrink & {
+                  bottom -($header-shrink-height / 2 - 17)
+                }
+              }
+            }
+            
+            
+
+            &.search {
+              font-size $pc-search-icon-font-size
+              margin-left 26px
+
+              i {
+                color var(--default-text-color)
+              }
+
+            }
+
+            .sub-menu{
+              position absolute;
+              right auto
+              left 50%
+              -webkit-transform translate(-50%, 0)
+              -o-transform translate(-50%, 0)
+              transform translate(-50%, 0)
+              margin-top 8px
+              width auto
+              text-align: center;
+              list-style:none;
+              padding 0 10px 
+              border-radius 18px
+              //visibility hidden
+              
+
+              max-height 0px
+              overflow hidden
+              transition-t("all", "0", "0.2", "linear") 
+
+              li a {
+                color var(--default-text-color)
+                font-size 1rem
+                padding 3px 15px
+                display block
+                text-align center
+                border-radius 8px
+                transition-t("all", "0", "0.2", "linear")
+
+                &:hover {
+                  color var(--primary-color)
+                  background-color var(--second-background-color)
+                }
+              }
+            }
+
+          }
+
+        }
+
+        .menu-list .menu-item:hover .sub-menu{
+          //visibility visible
+          max-height 500px
+          transition-t("all", "0", "0.2", "ease")
+          redefine-container(false, 0, 0, 10px, 5px)
+        }
+        
+      }
+
+
+      .mobile {
+        display flex
+        justify-content space-between
+        align-items center
+
+        .icon-item {
+          display none
+          position relative
+          cursor pointer
+          font-size 18px
+          margin-left 12px
+          width 20px
+          height 20px
+          color var(--default-text-color)
+
+          i {
+            color var(--default-text-color)
+          }
+
+          &:first-child {
+            margin-left 0
+          }
+
+          +redefine-tablet() {
+            display flex
+            justify-content center
+            align-items center
+          }
+        }
+
+        .menu-bar {
+
+          .menu-bar-middle {
+            width 18px
+            height $menu-bar-line-height
+            position relative
+            background var(--default-text-color)
+
+            .header-drawer-show & {
+              background transparent
+            }
+
+
+            &::before, &::after {
+              content ''
+              position absolute
+              left 0
+              width 100%
+              height $menu-bar-line-height
+              background var(--default-text-color)
+              transition-t("transform", "0", "0.38", "ease")
+            }
+
+
+            &::before {
+              top -6px
+
+              .header-drawer-show & {
+                transform translateY(6px) rotate(45deg)
+              }
+            }
+
+
+            &::after {
+              bottom -6px
+
+              .header-drawer-show & {
+                transform translateY(-6px) rotate(-45deg)
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
+
+  .header-drawer {
+    width 100%
+    padding $header-height 0 20px 0
+    position absolute
+    top 0
+    left 0
+    transform scaleY(0)
+    transform-origin top
+    z-index $z-index-2
+    background var(--background-color)
+    transition-t("transform", "0", "0.38", "ease")
+
+    .header-drawer-show & {
+      transform scaleY(1)
+    }
+
+    .drawer-menu-list {
+      display flex
+      flex-direction column
+      justify-content flex-start
+      align-items center
+
+      .drawer-menu-item {
+        font-family: "Optima Bold", sans-serif
+        font-size 1rem
+        margin 6px 0
+        height 32px
+
+        a {
+          padding 6px 20px
+          border-radius 20px
+          color var(--default-text-color)
+
+          &:hover {
+            color var(--second-text-color)
+            border 1px solid var(--default-text-color)
+          }
+
+
+          &.active {
+            border 1px solid var(--default-text-color)
+            color var(--second-text-color)
+          }
+        }
+
+        .has-dropdown {
+          font-family: "Optima Bold", sans-serif
+        }
+
+        a .fa-chevron-down{
+          transform rotate(0deg)
+          transition transform 0.3s ease
+        }
+
+        &:hover a .fa-chevron-down{
+          transform rotate(180deg)
+        }
+
+        &:hover .has-dropdown{
+          &::after {
+            display none !important
+          }
+        }
+      }
+
+      .dropdown-item {
+        font-size 1rem
+        margin 6px 0
+        height 16px
+
+        a {
+          padding 6px 20px
+          border-radius 20px
+          color var(--default-text-color)
+
+          &:hover {
+            color var(--second-text-color)
+            border 1px solid var(--default-text-color)
+          }
+
+
+          &.active {
+            border 1px solid var(--default-text-color)
+            color var(--second-text-color)
+          }
+        }
+      }
+
+      .sub-menu{
+        position relative
+        margin-top 8px
+        width 100%
+        text-align: center;
+        list-style: none;
+        padding 0 10px 
+        border-radius 18px
+        //float left
+      }
+    }
+  }
+
+
+  .window-mask {
+    position absolute
+    top 0
+    width 100%
+    height 100vh
+    background rgba(0, 0, 0, 0.4)
+    z-index $z-index-1
+    visibility hidden
+    opacity 0
+    transition-t("transform, opacity", "0, 0", "0.38, 0.38", "ease, ease")
+
+    .header-drawer-show & {
+      visibility visible
+      opacity 1
+    }
+  }
+
+}
+
+.header-drawer-show {
+  overflow hidden
+}
+
+        </div>
+
+        <div class="page-main-content-middle">
+
+            <div class="main-content">
+
+                
+                    <div class="fade-in-down-animation">
+    <div class="post-page-container">
+        <div class="article-content-container">
+            <div class="article-title">
+                <span class="title-hover-animation"><h1 style="font-size:2rem; font-weight: bold; margin: 10px 0;">git-tutorial</h1></span>
+            </div>
+
+            
+                <div class="article-header">
+                    <div class="avatar">
+                        <img src="/images/avatar.svg">
+                    </div>
+                    <div class="info">
+                        <div class="author">
+                            <span class="name">Wind</span>
+                            
+                                <span class="author-label">lol</span>
+                            
+                        </div>
+                        <div class="meta-info">
+                            .article-meta-info {
+  font-size 0.8rem
+  color var(--third-text-color)
+
+  .article-meta-item {
+    margin-right 10px
+
+    &:last-child {
+      margin-right 0
+    }
+  }
+
+  .article-date {
+
+    .mobile {
+      display none
+    }
+
+    +redefine-tablet() {
+      .pc {
+        display none
+      }
+
+      .mobile {
+        display inline
+      }
+    }
+
+  }
+
+
+  .article-tags, .article-categories {
+    display inline
+
+    ul, li {
+      display inline
+    }
+
+    a {
+      color var(--third-text-color)
+
+      &:hover {
+        color var(--primary-color)
+      }
+    }
+  }
+
+  .article-tags {
+    +redefine-tablet() {
+      display none
+    }
+  }
+
+  .article-min2read, .article-wordcount {
+    +redefine-mobile() {
+      display none
+    }
+  }
+}
+
+                        </div>
+                    </div>
+                </div>
+            
+
+            <div class="article-content markdown-body">
+                <blockquote>
+<p>Git（读音为&#x2F;gɪt&#x2F;）是一个开源的分布式版本控制系统，可以有效、高速地处理从很小到非常大的项目版本管理。也是Linus Torvalds为了帮助管理Linux内核开发而开发的一个开放源码的版本控制软件。</p>
+</blockquote>
+<h1 id="git运行机制"><a href="#git运行机制" class="headerlink" title="git运行机制"></a>git运行机制</h1><ul>
+<li><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://img-blog.csdnimg.cn/img_convert/47f428dfe978fb49a9aa0b83bc0af00b.png"
+                      alt="neovim" style="zoom: 100%;" 
+                ></li>
+</ul>
+<p>上图描述了 git 对象的在不同的生命周期中不同的存储位置，通过不同的 git 命令改变 git 对象的存储生命周期。</p>
+<ol>
+<li>Workspace：工作区，项目代码存放的地方</li>
+<li>Index &#x2F; Stage：暂存区，用于临时存放你的改动，事实上它只是一个文件，保存即将提交到文件列表信息</li>
+<li>Repository：仓库区（或本地仓库），就是安全存放数据的位置，这里面有你提交到所有版本的数据。其中HEAD指向最新放入仓库的版本</li>
+<li>Remote：远程仓库，托管代码的服务器，可以简单的认为是你项目组中的一台电脑用于远程数据交换</li>
+</ol>
+<h1 id="文件状态"><a href="#文件状态" class="headerlink" title="文件状态"></a>文件状态</h1><p>版本控制就是对文件的版本控制，要对文件进行修改、提交等操作</p>
+<ul>
+<li>Untracked: 未跟踪, 此文件在文件夹中, 但并没有加入到git库, 不参与版本控制. 通过git add 状态变为Staged.</li>
+<li>Unmodify: 文件已经入库, 未修改, 即版本库中的文件快照内容与文件夹中完全一致. 这种类型的文件有两种去处, 如果它被修改, 而变为Modified. 如果使用git rm移出版本库, 则成为Untracked文件</li>
+<li>Modified: 文件已修改, 仅仅是修改, 并没有进行其他的操作. 这个文件也有两个去处, 通过git add可进入暂存staged状态, 使用git checkout 则丢弃修改过, 返回到unmodify状态, 这个git checkout即从库中取出文件, 覆盖当前修改 !</li>
+<li>Staged: 暂存状态. 执行git commit则将修改同步到库中, 这时库中的文件和本地文件又变为一致, 文件为Unmodify状态. 执行git reset HEAD filename取消暂存, 文件状态为Modified</li>
+</ul>
+<h1 id="指令详解"><a href="#指令详解" class="headerlink" title="指令详解"></a>指令详解</h1><h2 id="创建本地git仓库"><a href="#创建本地git仓库" class="headerlink" title="创建本地git仓库"></a>创建本地git仓库</h2><div class="highlight-container" data-rel="Bash"><figure class="iseeu highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git init <span class="comment">#新建仓库</span></span><br></pre></td></tr></table></figure></div>
+
+<h2 id="克隆远程仓库"><a href="#克隆远程仓库" class="headerlink" title="克隆远程仓库"></a>克隆远程仓库</h2><div class="highlight-container" data-rel="Bash"><figure class="iseeu highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git <span class="built_in">clone</span> https://www.github.git</span><br></pre></td></tr></table></figure></div>
+
+<h2 id="新建分支dev"><a href="#新建分支dev" class="headerlink" title="新建分支dev"></a>新建分支dev</h2><div class="highlight-container" data-rel="Bash"><figure class="iseeu highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git checkout -b dev <span class="comment">#创建开发分支dev，并切换到该分支</span></span><br></pre></td></tr></table></figure></div>
+
+<h2 id="保存文件到暂存区stage"><a href="#保存文件到暂存区stage" class="headerlink" title="保存文件到暂存区stage"></a>保存文件到暂存区stage</h2><div class="highlight-container" data-rel="Bash"><figure class="iseeu highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">git add . <span class="comment">#添加当前目录的所有文件到暂存区</span></span><br><span class="line">git add[<span class="built_in">dir</span>] <span class="comment">#添加指定目录到暂存区，包括子目录</span></span><br><span class="line">git add [file1] <span class="comment">#添加指定文件到暂存区</span></span><br></pre></td></tr></table></figure></div>
+
+<h2 id="提交暂存区文件到本地仓库"><a href="#提交暂存区文件到本地仓库" class="headerlink" title="提交暂存区文件到本地仓库"></a>提交暂存区文件到本地仓库</h2><div class="highlight-container" data-rel="Bash"><figure class="iseeu highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git commit [file1] -m [message] <span class="comment">#提交暂存区的指定文件到本地仓库</span></span><br><span class="line">git commit --amend -m [message] <span class="comment">#使用一次新的commit，替代上一次提交</span></span><br></pre></td></tr></table></figure></div>
+
+<h2 id="查看状态"><a href="#查看状态" class="headerlink" title="查看状态"></a>查看状态</h2><div class="highlight-container" data-rel="Bash"><figure class="iseeu highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git status  <span class="comment">#查看当前工作区暂存区变动</span></span><br></pre></td></tr></table></figure></div>
+
+<h2 id="查看日志"><a href="#查看日志" class="headerlink" title="查看日志"></a>查看日志</h2><div class="highlight-container" data-rel="Bash"><figure class="iseeu highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git <span class="built_in">log</span>  <span class="comment">#查看提交历史</span></span><br></pre></td></tr></table></figure></div>
+
+<h2 id="拉取"><a href="#拉取" class="headerlink" title="拉取"></a>拉取</h2><div class="highlight-container" data-rel="Bash"><figure class="iseeu highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">git pull  <span class="comment">#拉取远程仓库所有分支更新并合并到本地分支</span></span><br><span class="line">git pull origin master <span class="comment">#将远程master分支合并到当前本地分支</span></span><br><span class="line">git pull origin master:master <span class="comment">#将远程master分支合并到当前本地master分支，冒号后面表示本地分支</span></span><br><span class="line">git fetch --all  <span class="comment">#拉取所有远端的最新代码</span></span><br><span class="line">git fetch origin master <span class="comment">#拉取远程最新master分支代码</span></span><br></pre></td></tr></table></figure></div>
+
+<h2 id="推送"><a href="#推送" class="headerlink" title="推送"></a>推送</h2><div class="highlight-container" data-rel="Bash"><figure class="iseeu highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">git push origin master <span class="comment">#将本地分支的更新全部推送到远程仓库master分支</span></span><br><span class="line">git push origin -d  删除远程branchname分支</span><br><span class="line">git push --tags 推送所有标签</span><br></pre></td></tr></table></figure></div>
+
+<h2 id="分支处理"><a href="#分支处理" class="headerlink" title="分支处理"></a>分支处理</h2><div class="highlight-container" data-rel="Bash"><figure class="iseeu highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">git branch  <span class="comment">#查看分支</span></span><br><span class="line">—D <span class="comment">#删除</span></span><br><span class="line">-a <span class="comment">#本地和远程分支</span></span><br></pre></td></tr></table></figure></div>
+
+<div class="highlight-container" data-rel="Bash"><figure class="iseeu highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git checkout master <span class="comment">#切换到分支master</span></span><br></pre></td></tr></table></figure></div>
+
+<div class="highlight-container" data-rel="Bash"><figure class="iseeu highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git merge master <span class="comment">#合并当前分支到master</span></span><br></pre></td></tr></table></figure></div>
+
+<h2 id="撤销和回退"><a href="#撤销和回退" class="headerlink" title="撤销和回退"></a>撤销和回退</h2><div class="highlight-container" data-rel="Bash"><figure class="iseeu highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#用于没添加到暂存区的工作区文件</span></span><br><span class="line">git checkout [file]  <span class="comment">#丢弃某个文件file</span></span><br><span class="line">git checkout .  <span class="comment">#丢弃所有文件</span></span><br></pre></td></tr></table></figure></div>
+
+<div class="highlight-container" data-rel="Bash"><figure class="iseeu highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#作用是修改HEAD的位置，即将HEAD指向的位置改变为之前存在的某个版本</span></span><br><span class="line">git reset HEAD --file <span class="comment">#回退暂存区里的某个文件，回退到当前版本工作区状态</span></span><br><span class="line">git reset –-soft 目标版本号 <span class="comment">#可以把版本库上的提交回退到暂存区,修改记录保留</span></span><br><span class="line">git reset –-mixed 目标版本号 <span class="comment">#可以把版本库上的提交回退到工作区，修改记录保留</span></span><br><span class="line">git reset –-hard  <span class="comment">#可以把版本库上的提交彻底回退，修改的记录全部revert。</span></span><br><span class="line"><span class="comment"># 1.是暂存区文件恢复到源文件</span></span><br><span class="line"><span class="comment"># 2.是本地仓库文件恢复到各个区</span></span><br></pre></td></tr></table></figure></div>
+
+<div class="highlight-container" data-rel="Bash"><figure class="iseeu highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#用于没添加到暂存区的工作区文件</span></span><br><span class="line">git revert 版本号  <span class="comment">#回滚某个版本作为新版本</span></span><br></pre></td></tr></table></figure></div>
+
+<blockquote>
+<p>参考文献<br><a class="link"   target="_blank" rel="noopener" href="https://blog.csdn.net/weixin_36168780/article/details/112100325" >https://blog.csdn.net/weixin_36168780/article/details/112100325<i class="fa-solid fa-up-right-from-square"></i></a></p>
+</blockquote>
+
+            </div>
+
+            
+                <div class="post-copyright-info">
+                    .article-copyright-info-container {
+  font-family "Noto Sans SC", sans-serif;8
+  position relative
+  width 100%
+  box-sizing border-box
+  padding 10px 6px
+  font-size 1rem
+  background var(--second-background-color)
+  border-radius 14px
+
+  &::after {
+    position absolute
+    top 0
+    left 0
+    content ''
+    width 6px
+    height 100%
+    background var(--copyright-info-color)
+    border-radius 5px
+  }
+
+
+  ul {
+
+    margin-left 10px
+
+    li {
+      margin-bottom 5px
+      overflow hidden
+      text-overflow ellipsis
+      white-space nowrap
+      color var(--default-text-color)
+
+      .license {
+        font-weight bold
+      }
+
+      &:last-child {
+        margin-bottom 0
+      }
+    }
+  }
+}
+
+                </div>
+            
+
+            
+                <ul class="post-tags-box">
+                    
+                        <li class="tag-item">
+                            <a href="/tags/git/">#git</a>&nbsp;
+                        </li>
+                    
+                </ul>
+            
+
+            
+                <div class="article-nav">
+                    
+                    
+                        <div class="article-next">
+                            <a class="next"
+                            rel="next"
+                            href="/2023/01/01/hexo-github-blog/"
+                            >
+                                <span class="title flex-center">
+                                    <span class="post-nav-title-item">hexo + github = blog</span>
+                                    <span class="post-nav-item">Next posts</span>
+                                </span>
+                                <span class="right arrow-icon flex-center">
+                                    <i class="fa-solid fa-chevron-right"></i>
+                                </span>
+                            </a>
+                        </div>
+                    
+                </div>
+            
+
+            
+        </div>
+
+        
+            <div class="toc-content-container">
+                .post-toc-wrap {
+  width 100%
+  font-size 0.92rem
+  box-sizing border-box
+  font-family "Noto Sans", sans-serif
+
+
+  
+  .post-toc {
+    
+    ol {
+      border-left 2px dotted var(--shadow-color-1)
+      list-style none
+      margin 0
+      padding 0 2px 12px 10px
+      text-align left
+
+      &:last-child {
+        padding-bottom 0
+      }
+
+      > ol {
+        padding-left 0
+      }
+
+      a {
+        transition-property all
+        transition()
+        
+      }
+    }
+
+
+    .nav-item {
+      line-height 2
+      overflow hidden
+      text-overflow ellipsis
+      white-space nowrap
+      //word-wrap:break-word
+      font-size 0.9rem
+    }
+
+
+    .nav {
+      .nav-child {
+        display hexo-config('toc.expand_all') ? block : none
+      }
+
+      .active > .nav-child {
+        display block
+      }
+
+      .active-current > .nav-child {
+        display block
+
+        > .nav-item {
+          display block
+        }
+      }
+
+
+      .nav-number, .nav-text {
+        color var(--default-text-color)
+      }
+
+      .active > a {
+        .nav-number, .nav-text {
+          color var(--primary-color)
+          font-weight bold
+        }
+      }
+
+      .active-current > a {
+        .nav-number, .nav-text {
+          //color var(--primary-color)
+          font-weight bold
+          transition-duration 0.1s
+        }
+      }
+    }
+  }
+}
+
+
+            </div>
+        
+    </div>
+</div>
+
+
+                
+
+            </div>
+
+
+
+        </div>
+
+        <div class="page-main-content-bottom">
+            .footer {
+  font-size 1rem
+  color var(--third-text-color)
+
+
+  a {
+    color var(--third-text-color)
+
+
+    &:hover {
+      color var(--primary-color)
+
+    }
+  }
+
+  .info-container {
+    padding-bottom 10px
+    text-align center
+  }
+
+  .info-item {
+    margin 5px 0
+  }
+
+  .icon-animate {
+    animation icon-animate 1.2s ease-in-out infinite
+  }
+
+}
+
+
+
+
+        </div>
+    </div>
+
+    
+        <div class="post-tools">
+            $li-border-radius = 10px
+$li-margin-bottom = 12px
+$post-tool-button-width = 42px
+
+.post-tools-container {
+
+  .tools-list {
+
+    li {
+      cursor pointer
+      width $post-tool-button-width
+      height $post-tool-button-width
+      border-radius $li-border-radius
+      font-size 1.2rem
+      display flex
+      align-items center
+      justify-content center
+      margin-bottom $li-margin-bottom
+      background var(--background-color)
+      color var(--default-text-color)
+
+      i {
+        color var(--default-text-color)
+      }
+
+      &:hover {
+        background var(--primary-color)
+        color var(--background-color)
+
+        i {
+          color var(--background-color)
+        }
+      }
+
+
+      &:last-child {
+        margin-bottom 0
+      }
+
+
+      hover-style(true, 1.06, 1.06)
+
+      &.page-aside-toggle {
+        display none
+
+        +redefine-tablet() {
+          display none !important
+        }
+      }
+    }
+  }
+
+}
+
+        </div>
+    
+
+    <div class="right-bottom-side-tools">
+        $tools-item-width = 42px
+$tools-item-font-size = 1.3rem
+$tools-item-border-radius = 12px
+
+
+.side-tools-container {
+  position relative
+  right 30px
+
+  .tools-item {
+    width $tools-item-width
+    height $tools-item-width
+    font-size $tools-item-font-size
+    margin-bottom 3px
+    cursor pointer
+    border-right none
+    border-radius $tools-item-border-radius
+    box-shadow var(--redefine-box-shadow)
+    color var(--default-text-color)
+    background var(--background-color)
+
+    i {
+      color var(--default-text-color)
+    }
+
+    &:hover {
+      color var(--background-color)
+      background var(--primary-color)
+      box-shadow var(--redefine-box-shadow)
+
+      i {
+        color var(--background-color)
+      }
+    }
+
+    +redefine-tablet() {
+      width $tools-item-width * 0.9
+      height $tools-item-width * 0.9
+      font-size $tools-item-font-size * 0.9
+      margin-bottom 2px
+    }
+
+    &.rss {
+
+      a {
+        border-radius $tools-item-border-radius
+        width 100%
+        height 100%
+
+        &:hover {
+          color var(--background-color)
+          background var(--primary-color)
+          box-shadow var(--redefine-box-shadow)
+        }
+      }
+    }
+  }
+
+
+  .side-tools-list {
+    opacity 0
+    transform translateX(100%)
+    transition-t("transform, opacity", "0, 0", "0.2, 0.2", "ease, ease")
+
+    .tool-expand-width {
+      +redefine-tablet() {
+        display none
+      }
+    }
+
+
+    &.show {
+      opacity 1
+      transform translateX(0)
+    }
+  }
+
+
+  .exposed-tools-list {
+
+    if (hexo-config('style.scroll.percent.enable') == true) {
+      .tool-scroll-to-top {
+        display none
+
+        &.show {
+          display flex
+        }
+
+        &:hover {
+
+          .percent {
+            display none
+          }
+
+          .arrow-up {
+            display flex
+          }
+
+        }
+
+        .arrow-up {
+          display none
+        }
+
+        .percent {
+          display flex
+          font-size 1rem
+        }
+
+      }
+
+    }
+  }
+}
+
+    </div>
+
+    .image-viewer-container {
+  position fixed
+  left 0
+  top 0
+  width 100%
+  height 100%
+  display flex
+  align-items center
+  justify-content center
+  background rgba(0, 0, 0, 0)
+  visibility hidden
+  z-index $z-index-8
+  padding 6%
+  box-sizing border-box
+  transition-t("visibility, background", "0, 0", "0.3, 0.3", "ease, ease")
+
+  &.active {
+    background rgba(0, 0, 0, 0.5)
+    visibility visible
+
+    img {
+      cursor zoom-out
+      transform scale(1)
+      padding 2px
+      background var(--background-color)
+    }
+  }
+
+  img {
+    max-width 100%
+    max-height 100%
+    transform scale(0)
+    transition-t("transform", "0", "0.3", "ease")
+  }
+}
+
+
+
+
+    
+
+</main>
+
+
+
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/main.js"></script>
+
+<script src="/js/header-shrink.js"></script>
+
+<script src="/js/back2top.js"></script>
+
+<script src="/js/dark-light-toggle.js"></script>
+
+
+
+
+
+    
+<script src="/js/code-copy.js"></script>
+
+
+
+
+    
+<script src="/js/lazyload.js"></script>
+
+
+
+
+    
+<script src="/js/runtime.js"></script>
+
+    
+<script src="/js/odometer.min.js"></script>
+
+    
+<link rel="stylesheet" href="/css/odometer-theme-minimal.css">
+
+
+
+<div class="post-scripts pjax">
+    
+        
+<script src="/js/toc-toggle.js"></script>
+
+<script src="/js/libs/anime.min.js"></script>
+
+<script src="/js/toc.js"></script>
+
+    
+</div>
+
+
+    
+<script src="/js/libs/pjax.min.js"></script>
+
+<script>
+    window.addEventListener('DOMContentLoaded', () => {
+        window.pjax = new Pjax({
+            selectors: [
+                'head title',
+                '.page-container',
+                '.pjax'
+            ],
+            history: true,
+            debug: false,
+            cacheBust: false,
+            timeout: 0,
+            analytics: false,
+            currentUrlFullReload: false,
+            scrollRestoration: false,
+            // scrollTo: true,
+        });
+
+        document.addEventListener('pjax:send', () => {
+            REDEFINE.utils.pjaxProgressBarStart();
+        });
+
+        document.addEventListener('pjax:complete', () => {
+            REDEFINE.utils.pjaxProgressBarEnd();
+            window.pjax.executeScripts(document.querySelectorAll('script[data-pjax], .pjax script'));
+            REDEFINE.refresh();
+        });
+    });
+</script>
+
+
+
+</body>
+</html>
