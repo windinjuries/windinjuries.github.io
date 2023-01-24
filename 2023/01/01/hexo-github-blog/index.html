@@ -49,80 +49,19 @@
 
 
 <body>
-.progress-bar-container {
-  position fixed
-  top 0
-  left 0
-  width 100%
-  z-index $z-index-9
+<div class="progress-bar-container">
+    
+        <span class="scroll-progress-bar"></span>
+    
 
-  if (hexo-config('pjax.enable') == true) {
+    
+        <span class="pjax-progress-bar"></span>
+        <span class="pjax-progress-icon">
+            <i class="fa-solid fa-circle-notch fa-spin"></i>
+        </span>
+    
+</div>
 
-    .pjax-progress-bar {
-      position absolute
-      top 0
-      left 0
-      height 2px
-      width 0
-      background var(--pjax-progress-bar-color)
-      visibility hidden
-      opacity 0
-      z-index $z-index-8
-      transition-t("width", "0", "0.1", "linear")
-
-
-      &.show {
-        opacity 1
-        visibility visible
-      }
-    }
-
-
-    .pjax-progress-icon {
-      position absolute
-      top 0
-      right 0
-      z-index $z-index-8
-      display flex
-      align-items center
-      justify-content center
-      padding 7px 6px 0 0
-      visibility hidden
-      font-size 1.1rem
-      color var(--default-text-color)
-
-      +redefine-tablet() {
-        padding 6px 5px 0 0
-        font-size 1rem
-      }
-
-      &.show {
-        visibility visible
-      }
-    }
-
-  }
-
-  if (hexo-config('style.scroll.progress_bar.enable') == true) {
-
-    .scroll-progress-bar {
-      position absolute
-      top 0
-      left 0
-      width 0
-      height $scroll-progress-bar-height
-      visibility hidden
-      z-index $z-index-7
-      background var(--primary-color)
-      transition-t("width", "0", "0.1", "linear")
-
-      &.hide {
-        display none !important
-      }
-    }
-
-  }
-}
 
 <main class="page-container">
 
@@ -131,428 +70,103 @@
     <div class="page-main-content">
 
         <div class="page-main-content-top">
-            $logo-title-font-size = 2rem
-$pc-search-icon-font-size = 1.5rem
-$menu-bar-line-height = 2.5px
-$logo-image-box-width = 46px
-
-.header-wrapper {
-  font-family "Optima Medium", sans-serif
-  width 100%
-  height 100%
-  box-sizing border-box
-  display flex
-  align-items center
-  justify-content center
-  background $nav-color-bg
-  -webkit-backdrop-filter blur(10px)
-  backdrop-filter blur(10px)
-  padding-top $scroll-progress-bar-height
-
-  hover-style(false, 0, 0)
-
-  .header-content {
-    position relative
-    height 100%
-    width $main-content-width
-    max-width $content-max-width
-    display flex
-    flex-direction row
-    justify-content space-between
-    align-items center
-    z-index $z-index-5
-
-
-    &.has-first-screen {
-      max-width $content-max-width * 1.2
-    }
-
-    +redefine-tablet() {
-      width $main-content-width-tablet
-    }
-
-    +redefine-mobile() {
-      width $main-content-width-mobile
-    }
-
-    .left {
-      display flex
-      align-items center
-      transition-t("transform", "0", "0.2", "linear")
-
-      .header-shrink & {
-        transform scale(0.72)
-        transform-origin left
-      }
-
-
-      if (hexo-config('base_info.logo_img') && hexo-config('base_info.logo_img') != '') {
-        .logo-image {
-          width $logo-image-box-width
-          height $logo-image-box-width
-          margin-right 8px
-
-
-          +redefine-tablet() {
-            width $logo-image-box-width * 0.9
-            height $logo-image-box-width * 0.9
-          }
-
-          +redefine-mobile() {
-            width $logo-image-box-width * 0.8
-            height $logo-image-box-width * 0.8
-          }
-
-          img {
-            border-radius 6px
-            width 100%
-          }
-        }
-
-      }
-
-      .logo-title {
-        font-size $logo-title-font-size
-        font-family "Optima Bold", sans-serif
-        //letter-spacing 1px
-        line-height 1
-        color var(--first-text-color)
-
-        +redefine-tablet() {
-          font-size $logo-title-font-size * 0.9
-        }
-
-        +redefine-mobile() {
-          font-size $logo-title-font-size * 0.8
-        }
-      }
-
-    }
-
-
-    .right {
-
-      .pc {
-
-        .menu-list {
-          display flex
-          align-items center
-          
-
-          +redefine-tablet() {
-            display none
-          }
-
-
-          .menu-item {
-            float left
-            padding 5px
-            position relative
-            margin-left 30px
-            font-size 1rem
-            cursor pointer
-            color var(--default-text-color)
-
-            &:first-child {
-              margin-left 0
-            }
-
-            a .fa-chevron-down{
-              transform rotate(0deg)
-              transition transform 0.3s ease
-            }
-
-            &:hover a .fa-chevron-down{
-              transform rotate(180deg)
-            }
-
-            &:hover .has-dropdown{
-              &::after {
-                display none !important
-              }
-            }
-
-            &:hover a, .active {
-              &::after {
-                content ''
-                position absolute
-                bottom -5px
-                left 50%
-                width 100%
-                height 2px
-                transform translateX(-50%)
-                background var(--primary-color)
-                transition-t("transform, bottom", "0, 0", "0.2, 0.2", "linear, linear")
-
-                .header-shrink & {
-                  bottom -($header-shrink-height / 2 - 17)
-                }
-              }
-            }
+            <header class="header-wrapper">
+    
+    <div class="header-content">
+        <div class="left">
             
+            <a class="logo-title" href="/">
+                Wind&#39;s Blog
+            </a>
+        </div>
+
+        <div class="right">
+            <!-- PC -->
+            <div class="pc">
+                <ul class="menu-list">
+                    
+                        <li class="menu-item">
+                            <!-- Menu -->
+                            <a class="" 
+                                href="/" >
+                                
+                                    
+                                        <i class="fa-regular fa-house"></i>
+                                    
+                                    HOME
+                                
+                            </a>
+                            <!-- Submenu -->
+                            
+                        </li>
+                    
+                        <li class="menu-item">
+                            <!-- Menu -->
+                            <a class="" 
+                                href="/archives" >
+                                
+                                    
+                                        <i class="fa-regular fa-archive"></i>
+                                    
+                                    ARCHIVES
+                                
+                            </a>
+                            <!-- Submenu -->
+                            
+                        </li>
+                    
+                    
+                </ul>
+            </div>
+            <!-- Mobile -->
+            <div class="mobile">
+                
+                <div class="icon-item menu-bar">
+                    <div class="menu-bar-middle"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Mobile drawer -->
+    <div class="header-drawer">
+        <ul class="drawer-menu-list">
             
+                <li class="drawer-menu-item flex-center">
+                    <a class="" 
+                       href="/" >
+                         
+                            
+                                <i class="fa-regular fa-house"></i>
+                            
+                            HOME
+                        
+                    </a>
+                </li>
+                <!-- Submenu -->
+                
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class="" 
+                       href="/archives" >
+                         
+                            
+                                <i class="fa-regular fa-archive"></i>
+                            
+                            ARCHIVES
+                        
+                    </a>
+                </li>
+                <!-- Submenu -->
+                
+            
+        </ul>
+    </div>
 
-            &.search {
-              font-size $pc-search-icon-font-size
-              margin-left 26px
+    <div class="window-mask"></div>
 
-              i {
-                color var(--default-text-color)
-              }
+</header>
 
-            }
-
-            .sub-menu{
-              position absolute;
-              right auto
-              left 50%
-              -webkit-transform translate(-50%, 0)
-              -o-transform translate(-50%, 0)
-              transform translate(-50%, 0)
-              margin-top 8px
-              width auto
-              text-align: center;
-              list-style:none;
-              padding 0 10px 
-              border-radius 18px
-              //visibility hidden
-              
-
-              max-height 0px
-              overflow hidden
-              transition-t("all", "0", "0.2", "linear") 
-
-              li a {
-                color var(--default-text-color)
-                font-size 1rem
-                padding 3px 15px
-                display block
-                text-align center
-                border-radius 8px
-                transition-t("all", "0", "0.2", "linear")
-
-                &:hover {
-                  color var(--primary-color)
-                  background-color var(--second-background-color)
-                }
-              }
-            }
-
-          }
-
-        }
-
-        .menu-list .menu-item:hover .sub-menu{
-          //visibility visible
-          max-height 500px
-          transition-t("all", "0", "0.2", "ease")
-          redefine-container(false, 0, 0, 10px, 5px)
-        }
-        
-      }
-
-
-      .mobile {
-        display flex
-        justify-content space-between
-        align-items center
-
-        .icon-item {
-          display none
-          position relative
-          cursor pointer
-          font-size 18px
-          margin-left 12px
-          width 20px
-          height 20px
-          color var(--default-text-color)
-
-          i {
-            color var(--default-text-color)
-          }
-
-          &:first-child {
-            margin-left 0
-          }
-
-          +redefine-tablet() {
-            display flex
-            justify-content center
-            align-items center
-          }
-        }
-
-        .menu-bar {
-
-          .menu-bar-middle {
-            width 18px
-            height $menu-bar-line-height
-            position relative
-            background var(--default-text-color)
-
-            .header-drawer-show & {
-              background transparent
-            }
-
-
-            &::before, &::after {
-              content ''
-              position absolute
-              left 0
-              width 100%
-              height $menu-bar-line-height
-              background var(--default-text-color)
-              transition-t("transform", "0", "0.38", "ease")
-            }
-
-
-            &::before {
-              top -6px
-
-              .header-drawer-show & {
-                transform translateY(6px) rotate(45deg)
-              }
-            }
-
-
-            &::after {
-              bottom -6px
-
-              .header-drawer-show & {
-                transform translateY(-6px) rotate(-45deg)
-              }
-            }
-          }
-        }
-      }
-    }
-  }
-
-
-  .header-drawer {
-    width 100%
-    padding $header-height 0 20px 0
-    position absolute
-    top 0
-    left 0
-    transform scaleY(0)
-    transform-origin top
-    z-index $z-index-2
-    background var(--background-color)
-    transition-t("transform", "0", "0.38", "ease")
-
-    .header-drawer-show & {
-      transform scaleY(1)
-    }
-
-    .drawer-menu-list {
-      display flex
-      flex-direction column
-      justify-content flex-start
-      align-items center
-
-      .drawer-menu-item {
-        font-family: "Optima Bold", sans-serif
-        font-size 1rem
-        margin 6px 0
-        height 32px
-
-        a {
-          padding 6px 20px
-          border-radius 20px
-          color var(--default-text-color)
-
-          &:hover {
-            color var(--second-text-color)
-            border 1px solid var(--default-text-color)
-          }
-
-
-          &.active {
-            border 1px solid var(--default-text-color)
-            color var(--second-text-color)
-          }
-        }
-
-        .has-dropdown {
-          font-family: "Optima Bold", sans-serif
-        }
-
-        a .fa-chevron-down{
-          transform rotate(0deg)
-          transition transform 0.3s ease
-        }
-
-        &:hover a .fa-chevron-down{
-          transform rotate(180deg)
-        }
-
-        &:hover .has-dropdown{
-          &::after {
-            display none !important
-          }
-        }
-      }
-
-      .dropdown-item {
-        font-size 1rem
-        margin 6px 0
-        height 16px
-
-        a {
-          padding 6px 20px
-          border-radius 20px
-          color var(--default-text-color)
-
-          &:hover {
-            color var(--second-text-color)
-            border 1px solid var(--default-text-color)
-          }
-
-
-          &.active {
-            border 1px solid var(--default-text-color)
-            color var(--second-text-color)
-          }
-        }
-      }
-
-      .sub-menu{
-        position relative
-        margin-top 8px
-        width 100%
-        text-align: center;
-        list-style: none;
-        padding 0 10px 
-        border-radius 18px
-        //float left
-      }
-    }
-  }
-
-
-  .window-mask {
-    position absolute
-    top 0
-    width 100%
-    height 100vh
-    background rgba(0, 0, 0, 0.4)
-    z-index $z-index-1
-    visibility hidden
-    opacity 0
-    transition-t("transform, opacity", "0, 0", "0.38, 0.38", "ease, ease")
-
-    .header-drawer-show & {
-      visibility visible
-      opacity 1
-    }
-  }
-
-}
-
-.header-drawer-show {
-  overflow hidden
-}
 
         </div>
 
@@ -581,65 +195,39 @@ $logo-image-box-width = 46px
                             
                         </div>
                         <div class="meta-info">
-                            .article-meta-info {
-  font-size 0.8rem
-  color var(--third-text-color)
+                            <div class="article-meta-info">
+    <span class="article-date article-meta-item">
+        <i class="fa-regular fa-pen-fancy"></i>&nbsp;
+        <span class="pc">2023-01-01 09:21:23</span>
+        <span class="mobile">2023-01-01 09:21</span>
+    </span>
+    
+    
+        <span class="article-tags article-meta-item">
+            <i class="fa-regular fa-tags"></i>&nbsp;
+            <ul>
+                
+                    <li>
+                        <a href="/tags/hexo/">hexo</a>&nbsp;
+                    </li>
+                
+                    <li>
+                        | <a href="/tags/github/">github</a>&nbsp;
+                    </li>
+                
+            </ul>
+        </span>
+    
 
-  .article-meta-item {
-    margin-right 10px
-
-    &:last-child {
-      margin-right 0
-    }
-  }
-
-  .article-date {
-
-    .mobile {
-      display none
-    }
-
-    +redefine-tablet() {
-      .pc {
-        display none
-      }
-
-      .mobile {
-        display inline
-      }
-    }
-
-  }
-
-
-  .article-tags, .article-categories {
-    display inline
-
-    ul, li {
-      display inline
-    }
-
-    a {
-      color var(--third-text-color)
-
-      &:hover {
-        color var(--primary-color)
-      }
-    }
-  }
-
-  .article-tags {
-    +redefine-tablet() {
-      display none
-    }
-  }
-
-  .article-min2read, .article-wordcount {
-    +redefine-mobile() {
-      display none
-    }
-  }
-}
+    
+    
+    
+    
+        <span class="article-pv article-meta-item">
+            <i class="fa-regular fa-eye"></i>&nbsp;<span id="busuanzi_value_page_pv"></span>
+        </span>
+    
+</div>
 
                         </div>
                     </div>
@@ -689,49 +277,19 @@ $logo-image-box-width = 46px
 
             
                 <div class="post-copyright-info">
-                    .article-copyright-info-container {
-  font-family "Noto Sans SC", sans-serif;8
-  position relative
-  width 100%
-  box-sizing border-box
-  padding 10px 6px
-  font-size 1rem
-  background var(--second-background-color)
-  border-radius 14px
-
-  &::after {
-    position absolute
-    top 0
-    left 0
-    content ''
-    width 6px
-    height 100%
-    background var(--copyright-info-color)
-    border-radius 5px
-  }
-
-
-  ul {
-
-    margin-left 10px
-
-    li {
-      margin-bottom 5px
-      overflow hidden
-      text-overflow ellipsis
-      white-space nowrap
-      color var(--default-text-color)
-
-      .license {
-        font-weight bold
-      }
-
-      &:last-child {
-        margin-bottom 0
-      }
-    }
-  }
-}
+                    <div class="article-copyright-info-container">
+    <ul>
+        <li>Post title：hexo + github = blog</li>
+        <li>Post author：Wind</li>
+        <li>Create time：2023-01-01 09:21:23</li>
+        <li>
+            Post link：https://redefine.evanluo.top/2023/01/01/hexo-github-blog/
+        </li>
+        <li>
+            Copyright Notice：All articles in this blog are licensed under <a class="license" target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">BY-NC-SA</a> unless stating additionally.
+        </li>
+    </ul>
+</div>
 
                 </div>
             
@@ -792,90 +350,12 @@ $logo-image-box-width = 46px
 
         
             <div class="toc-content-container">
-                .post-toc-wrap {
-  width 100%
-  font-size 0.92rem
-  box-sizing border-box
-  font-family "Noto Sans", sans-serif
-
-
-  
-  .post-toc {
-    
-    ol {
-      border-left 2px dotted var(--shadow-color-1)
-      list-style none
-      margin 0
-      padding 0 2px 12px 10px
-      text-align left
-
-      &:last-child {
-        padding-bottom 0
-      }
-
-      > ol {
-        padding-left 0
-      }
-
-      a {
-        transition-property all
-        transition()
-        
-      }
-    }
-
-
-    .nav-item {
-      line-height 2
-      overflow hidden
-      text-overflow ellipsis
-      white-space nowrap
-      //word-wrap:break-word
-      font-size 0.9rem
-    }
-
-
-    .nav {
-      .nav-child {
-        display hexo-config('toc.expand_all') ? block : none
-      }
-
-      .active > .nav-child {
-        display block
-      }
-
-      .active-current > .nav-child {
-        display block
-
-        > .nav-item {
-          display block
-        }
-      }
-
-
-      .nav-number, .nav-text {
-        color var(--default-text-color)
-      }
-
-      .active > a {
-        .nav-number, .nav-text {
-          color var(--primary-color)
-          font-weight bold
-        }
-      }
-
-      .active-current > a {
-        .nav-number, .nav-text {
-          //color var(--primary-color)
-          font-weight bold
-          transition-duration 0.1s
-        }
-      }
-    }
-  }
-}
-
-
+                <div class="post-toc-wrap">
+    <div class="post-toc">
+        <div style="font-size: 1.3rem;margin-top: 0; margin-bottom: 0.8rem; transition-duration: 0.1s;"><i class="fa-solid fa-list"></i> <strong>Contents</strong></div>
+        <ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#hexo%E6%90%AD%E5%BB%BA%E6%95%99%E7%A8%8B"><span class="nav-text">hexo搭建教程</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%8E%AF%E5%A2%83%E5%AE%89%E8%A3%85"><span class="nav-text">环境安装</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#hexo%E5%AE%89%E8%A3%85"><span class="nav-text">hexo安装</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B8%BB%E9%A2%98%E5%AE%89%E8%A3%85"><span class="nav-text">主题安装</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#GitHub%E9%85%8D%E7%BD%AE"><span class="nav-text">GitHub配置</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8D%9A%E5%AE%A2%E5%88%9B%E5%BB%BA"><span class="nav-text">博客创建</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%85%8D%E7%BD%AE-config-yml"><span class="nav-text">配置 __config.yml</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%88%9B%E5%BB%BA%E5%8D%9A%E5%AE%A2"><span class="nav-text">创建博客</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%B8%B8%E8%A7%81%E9%97%AE%E9%A2%98"><span class="nav-text">常见问题</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-hexo-d%E5%87%BA%E7%8E%B0"><span class="nav-text">1.hexo d出现</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-node-%E7%8E%AF%E5%A2%83%E5%8F%98%E9%87%8Fwindows%E4%B8%8EWSL%E5%86%B2%E7%AA%81"><span class="nav-text">2.node 环境变量windows与WSL冲突</span></a></li></ol></li></ol></li></ol>
+    </div>
+</div>
             </div>
         
     </div>
@@ -891,256 +371,130 @@ $logo-image-box-width = 46px
         </div>
 
         <div class="page-main-content-bottom">
-            .footer {
-  font-size 1rem
-  color var(--third-text-color)
-
-
-  a {
-    color var(--third-text-color)
-
-
-    &:hover {
-      color var(--primary-color)
-
-    }
-  }
-
-  .info-container {
-    padding-bottom 10px
-    text-align center
-  }
-
-  .info-item {
-    margin 5px 0
-  }
-
-  .icon-animate {
-    animation icon-animate 1.2s ease-in-out infinite
-  }
-
-}
-
-
-
-
+            <footer class="footer">
+    <div class="info-container">
+        <div class="copyright-info info-item">
+            &copy;
+            
+              <span>2022</span>
+              -
+            
+            2023&nbsp;<i class="fa-solid fa-heart icon-animate"></i>&nbsp;<a href="/">Wind. All Rights Reserved.</a>
+        </div>
+        
+            <script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+            <div class="website-count info-item">
+                
+                    <span id="busuanzi_container_site_uv">
+                        Visitor Count&nbsp;<span id="busuanzi_value_site_uv"></span>&ensp;
+                    </span>
+                
+                
+                    <span id="busuanzi_container_site_pv">
+                        Totalviews&nbsp;<span id="busuanzi_value_site_pv"></span>
+                    </span>
+                
+            </div>
+        
+        <div class="theme-info info-item">
+            Powered by <a target="_blank" href="https://hexo.io">Hexo</a>&nbsp;|&nbsp;Theme&nbsp;<a class="theme-version" target="_blank" href="https://github.com/EvanNotFound/hexo-theme-redefine">Redefine v0.4.5</a>
+        </div>
+        
+        
+        <script async data-pjax defer>
+            function odometer_init(){
+                    let el = document.getElementsByClassName('odometer');
+                    for (i = 0; i < el.length; i++) {
+                        od = new Odometer({
+                            el: el[i],
+                            format: '( ddd).dd',
+                            duration: 200
+                        });
+                    }
+            }
+            odometer_init();
+        </script>
+        <div id="start_time_div" style="display:none">
+            2022/8/17 11:45:14
+        </div>
+        
+            <div>
+                Blog up for <span class="odometer" id="runtime_days" ></span> days <span class="odometer" id="runtime_hours"></span> hrs <span class="odometer" id="runtime_minutes"></span> Min <span class="odometer" id="runtime_seconds"></span> Sec
+            </div>
+        
+        
+        
+    </div>  
+</footer>
         </div>
     </div>
 
     
         <div class="post-tools">
-            $li-border-radius = 10px
-$li-margin-bottom = 12px
-$post-tool-button-width = 42px
+            <div class="post-tools-container">
+    <ul class="tools-list">
+        <!-- TOC aside toggle -->
+        
+            <li class="tools-item page-aside-toggle">
+                <i class="fa-regular fa-outdent"></i>
+            </li>
+        
 
-.post-tools-container {
-
-  .tools-list {
-
-    li {
-      cursor pointer
-      width $post-tool-button-width
-      height $post-tool-button-width
-      border-radius $li-border-radius
-      font-size 1.2rem
-      display flex
-      align-items center
-      justify-content center
-      margin-bottom $li-margin-bottom
-      background var(--background-color)
-      color var(--default-text-color)
-
-      i {
-        color var(--default-text-color)
-      }
-
-      &:hover {
-        background var(--primary-color)
-        color var(--background-color)
-
-        i {
-          color var(--background-color)
-        }
-      }
-
-
-      &:last-child {
-        margin-bottom 0
-      }
-
-
-      hover-style(true, 1.06, 1.06)
-
-      &.page-aside-toggle {
-        display none
-
-        +redefine-tablet() {
-          display none !important
-        }
-      }
-    }
-  }
-
-}
+        <!-- go comment -->
+        
+    </ul>
+</div>
 
         </div>
     
 
     <div class="right-bottom-side-tools">
-        $tools-item-width = 42px
-$tools-item-font-size = 1.3rem
-$tools-item-border-radius = 12px
+        <div class="side-tools-container">
+    <ul class="side-tools-list">
+        <li class="tools-item tool-font-adjust-plus flex-center">
+            <i class="fa-solid fa-magnifying-glass-plus"></i>
+        </li>
 
+        <li class="tools-item tool-font-adjust-minus flex-center">
+            <i class="fa-solid fa-magnifying-glass-minus"></i>
+        </li>
 
-.side-tools-container {
-  position relative
-  right 30px
+        <li class="tools-item tool-expand-width flex-center">
+            <i class="fa-solid fa-left-right"></i>
+        </li>
 
-  .tools-item {
-    width $tools-item-width
-    height $tools-item-width
-    font-size $tools-item-font-size
-    margin-bottom 3px
-    cursor pointer
-    border-right none
-    border-radius $tools-item-border-radius
-    box-shadow var(--redefine-box-shadow)
-    color var(--default-text-color)
-    background var(--background-color)
+        <li class="tools-item tool-dark-light-toggle flex-center">
+            <i class="fa-solid fa-moon"></i>
+        </li>
 
-    i {
-      color var(--default-text-color)
-    }
+        <!-- rss -->
+        
 
-    &:hover {
-      color var(--background-color)
-      background var(--primary-color)
-      box-shadow var(--redefine-box-shadow)
+        
 
-      i {
-        color var(--background-color)
-      }
-    }
+        <li class="tools-item tool-scroll-to-bottom flex-center">
+            <i class="fa-solid fa-arrow-down"></i>
+        </li>
+    </ul>
 
-    +redefine-tablet() {
-      width $tools-item-width * 0.9
-      height $tools-item-width * 0.9
-      font-size $tools-item-font-size * 0.9
-      margin-bottom 2px
-    }
-
-    &.rss {
-
-      a {
-        border-radius $tools-item-border-radius
-        width 100%
-        height 100%
-
-        &:hover {
-          color var(--background-color)
-          background var(--primary-color)
-          box-shadow var(--redefine-box-shadow)
-        }
-      }
-    }
-  }
-
-
-  .side-tools-list {
-    opacity 0
-    transform translateX(100%)
-    transition-t("transform, opacity", "0, 0", "0.2, 0.2", "ease, ease")
-
-    .tool-expand-width {
-      +redefine-tablet() {
-        display none
-      }
-    }
-
-
-    &.show {
-      opacity 1
-      transform translateX(0)
-    }
-  }
-
-
-  .exposed-tools-list {
-
-    if (hexo-config('style.scroll.percent.enable') == true) {
-      .tool-scroll-to-top {
-        display none
-
-        &.show {
-          display flex
-        }
-
-        &:hover {
-
-          .percent {
-            display none
-          }
-
-          .arrow-up {
-            display flex
-          }
-
-        }
-
-        .arrow-up {
-          display none
-        }
-
-        .percent {
-          display flex
-          font-size 1rem
-        }
-
-      }
-
-    }
-  }
-}
+    <ul class="exposed-tools-list">
+        <li class="tools-item tool-toggle-show flex-center">
+            <i class="fa-solid fa-cog fa-spin"></i>
+        </li>
+        
+            <li class="tools-item tool-scroll-to-top flex-center">
+                <i class="arrow-up fas fa-arrow-up"></i>
+                <span class="percent"></span>
+            </li>
+        
+    </ul>
+</div>
 
     </div>
 
-    .image-viewer-container {
-  position fixed
-  left 0
-  top 0
-  width 100%
-  height 100%
-  display flex
-  align-items center
-  justify-content center
-  background rgba(0, 0, 0, 0)
-  visibility hidden
-  z-index $z-index-8
-  padding 6%
-  box-sizing border-box
-  transition-t("visibility, background", "0, 0", "0.3, 0.3", "ease, ease")
-
-  &.active {
-    background rgba(0, 0, 0, 0.5)
-    visibility visible
-
-    img {
-      cursor zoom-out
-      transform scale(1)
-      padding 2px
-      background var(--background-color)
-    }
-  }
-
-  img {
-    max-width 100%
-    max-height 100%
-    transform scale(0)
-    transition-t("transform", "0", "0.3", "ease")
-  }
-}
-
-
+    <div class="image-viewer-container">
+    <img src="">
+</div>
 
 
     
