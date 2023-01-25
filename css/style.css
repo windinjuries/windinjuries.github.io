@@ -2698,7 +2698,7 @@ pre .deletion {
 }
 @media (prefers-color-scheme: light) {
   .first-screen-container {
-    background: url("https://s2.loli.net/2023/01/01/Gy6HJivoBEmutrx.jpg") center center/cover no-repeat !important;
+    background: url("https://s2.loli.net/2023/01/25/Af7gCFcz41yLOeR.png") center center/cover no-repeat !important;
   }
 }
 @media (prefers-color-scheme: dark) {
@@ -2707,7 +2707,7 @@ pre .deletion {
   }
 }
 .light-mode .first-screen-container {
-  background: url("https://s2.loli.net/2023/01/01/Gy6HJivoBEmutrx.jpg") center center/cover no-repeat !important;
+  background: url("https://s2.loli.net/2023/01/25/Af7gCFcz41yLOeR.png") center center/cover no-repeat !important;
 }
 .dark-mode .first-screen-container {
   background: url("https://s2.loli.net/2023/01/01/Gy6HJivoBEmutrx.jpg") center center/cover no-repeat !important;

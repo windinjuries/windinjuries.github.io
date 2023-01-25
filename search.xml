@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title>git-tutorial</title>
+    <title>git tutorial</title>
     <url>/2023/01/22/git-tutorial/</url>
     <content><![CDATA[<blockquote>
 <p>Git（读音为&#x2F;gɪt&#x2F;）是一个开源的分布式版本控制系统，可以有效、高速地处理从很小到非常大的项目版本管理。也是Linus Torvalds为了帮助管理Linux内核开发而开发的一个开放源码的版本控制软件。</p>
@@ -67,7 +67,7 @@
       </tags>
   </entry>
   <entry>
-    <title>hexo + github = blog</title>
+    <title>hexo tutorial</title>
     <url>/2023/01/01/hexo-github-blog/</url>
     <content><![CDATA[<blockquote>
 <p><code>Hexo + GitHub</code>可以组成免费的个人博客网站，<code>Hexo</code>是高效的静态网站生成框架，它基于<code>Node.js</code>，快速，简单且功能强大，是搭建博客的首选框架。大家可以进入Hexo官网进行详细查看，因为<code>Hexo</code>的创建者是台湾人，对中文的支持很友好，可以选择中文进行查看。通过<code>Hexo</code>，你可以直接使用<code>Markdown</code>语法来撰写博客。写完后只需两三条命令即可将生成的网页上传到<code>github</code>或者<code>coding</code>等代码管理托管平台。</p>

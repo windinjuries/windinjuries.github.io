@@ -2,6 +2,15 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://windinjuries.github.io/2023/01/01/hexo-github-blog/</loc>
+    
+    <lastmod>2023-01-24</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>http://windinjuries.github.io/2023/01/22/git-tutorial/</loc>
     
     <lastmod>2023-01-24</lastmod>
@@ -19,19 +28,10 @@
     <priority>0.6</priority>
   </url>
   
-  <url>
-    <loc>http://windinjuries.github.io/2023/01/01/hexo-github-blog/</loc>
-    
-    <lastmod>2023-01-22</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
 
   <url>
     <loc>http://windinjuries.github.io/</loc>
-    <lastmod>2023-01-24</lastmod>
+    <lastmod>2023-01-25</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
   </url>
@@ -39,28 +39,28 @@
   
   <url>
     <loc>http://windinjuries.github.io/tags/git/</loc>
-    <lastmod>2023-01-24</lastmod>
+    <lastmod>2023-01-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>http://windinjuries.github.io/tags/hexo/</loc>
-    <lastmod>2023-01-24</lastmod>
+    <lastmod>2023-01-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>http://windinjuries.github.io/tags/github/</loc>
-    <lastmod>2023-01-24</lastmod>
+    <lastmod>2023-01-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>http://windinjuries.github.io/tags/neovim/</loc>
-    <lastmod>2023-01-24</lastmod>
+    <lastmod>2023-01-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
